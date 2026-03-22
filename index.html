@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plaid Pants Emporium — Where the Squares Are the Pattern</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Limelight&family=Special+Elite&family=Oswald:wght@300;400;700&display=swap');
+
+    :root {
+      --avocado: #6b7c2e;
+      --harvest-gold: #d4a017;
+      --burnt-orange: #cc5500;
+      --chocolate: #3b1a08;
+      --cream: #f5e6c8;
+      --mustard: #e3b505;
+      --olive: #808000;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--chocolate);
+      background-image:
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 20px,
+          rgba(212,160,23,0.08) 20px,
+          rgba(212,160,23,0.08) 40px
+        ),
+        repeating-linear-gradient(
+          -45deg,
+          transparent,
+          transparent 20px,
+          rgba(107,124,46,0.08) 20px,
+          rgba(107,124,46,0.08) 40px
+        );
+      font-family: 'Special Elite', serif;
+      color: var(--cream);
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: var(--burnt-orange);
+      border-bottom: 8px solid var(--harvest-gold);
+      border-top: 8px solid var(--harvest-gold);
+      text-align: center;
+      padding: 24px 20px 18px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 8px, rgba(0,0,0,0.1) 8px, rgba(0,0,0,0.1) 9px),
+        repeating-linear-gradient(90deg, transparent, transparent 8px, rgba(0,0,0,0.1) 8px, rgba(0,0,0,0.1) 9px);
+      pointer-events: none;
+    }
+
+    .logo {
+      font-family: 'Alfa Slab One', serif;
+      font-size: clamp(2.2rem, 7vw, 5rem);
+      color: var(--cream);
+      text-shadow: 4px 4px 0 var(--chocolate), 7px 7px 0 rgba(0,0,0,0.3);
+      letter-spacing: 2px;
+      line-height: 1.1;
+      position: relative;
+    }
+
+    .logo span {
+      color: var(--harvest-gold);
+    }
+
+    .tagline {
+      font-family: 'Limelight', cursive;
+      font-size: clamp(0.85rem, 2.5vw, 1.2rem);
+      color: var(--mustard);
+      margin-top: 8px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      position: relative;
+    }
+
+    .established {
+      font-size: 0.75rem;
+      color: var(--cream);
+      opacity: 0.7;
+      margin-top: 6px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      position: relative;
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      background: var(--avocado);
+      padding: 10px 0;
+      text-align: center;
+      border-bottom: 4px solid var(--harvest-gold);
+    }
+
+    nav a {
+      color: var(--cream);
+      text-decoration: none;
+      margin: 0 18px;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--mustard); }
+
+    /* ===== HERO BANNER ===== */
+    .hero-banner {
+      background: var(--mustard);
+      color: var(--chocolate);
+      text-align: center;
+      padding: 14px 20px;
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(0.9rem, 3vw, 1.1rem);
+      font-weight: 700;
+      letter-spacing: 1px;
+      border-bottom: 4px dashed var(--burnt-orange);
+      animation: flash 3s infinite;
+    }
+
+    @keyframes flash {
+      0%, 100% { background: var(--mustard); }
+      50% { background: var(--harvest-gold); }
+    }
+
+    /* ===== MAIN LAYOUT ===== */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 700px) {
+      .two-col { grid-template-columns: 1fr; }
+      nav a { margin: 0 8px; font-size: 0.75rem; }
+    }
+
+    /* ===== SECTION HEADERS ===== */
+    .section-header {
+      font-family: 'Limelight', cursive;
+      font-size: clamp(1.4rem, 4vw, 2.2rem);
+      color: var(--harvest-gold);
+      text-align: center;
+      margin: 40px 0 24px;
+      text-shadow: 2px 2px 0 var(--chocolate);
+      letter-spacing: 2px;
+    }
+
+    .divider {
+      text-align: center;
+      color: var(--burnt-orange);
+      font-size: 1.5rem;
+      margin: 10px 0 30px;
+      letter-spacing: 6px;
+    }
+
+    /* ===== PRODUCT CARDS ===== */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 24px;
+      margin-bottom: 50px;
+    }
+
+    .product-card {
+      background: var(--cream);
+      color: var(--chocolate);
+      border: 4px solid var(--harvest-gold);
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 6px 6px 0 var(--harvest-gold);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .product-card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 9px 9px 0 var(--harvest-gold);
+    }
+
+    .product-swatch {
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Individual swatch patterns */
+    .swatch-1 {
+      background-color: #8B4513;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 14px, rgba(255,200,50,0.6) 14px, rgba(255,200,50,0.6) 18px),
+        repeating-linear-gradient(90deg, transparent, transparent 14px, rgba(255,200,50,0.6) 14px, rgba(255,200,50,0.6) 18px),
+        repeating-linear-gradient(0deg, transparent, transparent 6px, rgba(0,0,0,0.2) 6px, rgba(0,0,0,0.2) 8px),
+        repeating-linear-gradient(90deg, transparent, transparent 6px, rgba(0,0,0,0.2) 6px, rgba(0,0,0,0.2) 8px);
+    }
+    .swatch-2 {
+      background-color: #4a6741;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 10px, rgba(255,255,100,0.5) 10px, rgba(255,255,100,0.5) 14px),
+        repeating-linear-gradient(90deg, transparent, transparent 10px, rgba(255,255,100,0.5) 10px, rgba(255,255,100,0.5) 14px),
+        repeating-linear-gradient(0deg, transparent, transparent 4px, rgba(200,80,0,0.3) 4px, rgba(200,80,0,0.3) 6px),
+        repeating-linear-gradient(90deg, transparent, transparent 4px, rgba(200,80,0,0.3) 4px, rgba(200,80,0,0.3) 6px);
+    }
+    .swatch-3 {
+      background-color: #cc5500;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 12px, rgba(255,255,255,0.3) 12px, rgba(255,255,255,0.3) 16px),
+        repeating-linear-gradient(90deg, transparent, transparent 12px, rgba(255,255,255,0.3) 12px, rgba(255,255,255,0.3) 16px),
+        repeating-linear-gradient(0deg, transparent, transparent 5px, rgba(0,0,0,0.15) 5px, rgba(0,0,0,0.15) 7px),
+        repeating-linear-gradient(90deg, transparent, transparent 5px, rgba(0,0,0,0.15) 5px, rgba(0,0,0,0.15) 7px);
+    }
+    .swatch-4 {
+      background-color: #1a1a5e;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 16px, rgba(255,200,0,0.5) 16px, rgba(255,200,0,0.5) 20px),
+        repeating-linear-gradient(90deg, transparent, transparent 16px, rgba(255,200,0,0.5) 16px, rgba(255,200,0,0.5) 20px),
+        repeating-linear-gradient(0deg, transparent, transparent 7px, rgba(255,100,0,0.3) 7px, rgba(255,100,0,0.3) 9px),
+        repeating-linear-gradient(90deg, transparent, transparent 7px, rgba(255,100,0,0.3) 7px, rgba(255,100,0,0.3) 9px);
+    }
+    .swatch-5 {
+      background-color: #6b2d2d;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 9px, rgba(200,200,50,0.55) 9px, rgba(200,200,50,0.55) 13px),
+        repeating-linear-gradient(90deg, transparent, transparent 9px, rgba(200,200,50,0.55) 9px, rgba(200,200,50,0.55) 13px),
+        repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(255,255,255,0.1) 3px, rgba(255,255,255,0.1) 5px),
+        repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(255,255,255,0.1) 3px, rgba(255,255,255,0.1) 5px);
+    }
+    .swatch-6 {
+      background-color: #2d5a2d;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 11px, rgba(255,165,0,0.6) 11px, rgba(255,165,0,0.6) 15px),
+        repeating-linear-gradient(90deg, transparent, transparent 11px, rgba(255,165,0,0.6) 11px, rgba(255,165,0,0.6) 15px),
+        repeating-linear-gradient(0deg, transparent, transparent 4px, rgba(255,255,255,0.15) 4px, rgba(255,255,255,0.15) 6px),
+        repeating-linear-gradient(90deg, transparent, transparent 4px, rgba(255,255,255,0.15) 4px, rgba(255,255,255,0.15) 6px);
+    }
+
+    .product-info {
+      padding: 14px 16px 18px;
+    }
+
+    .product-name {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--chocolate);
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .product-desc {
+      font-size: 0.82rem;
+      color: #5a3a1a;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .price {
+      font-family: 'Alfa Slab One', serif;
+      font-size: 1.3rem;
+      color: var(--burnt-orange);
+    }
+
+    .buy-btn {
+      background: var(--burnt-orange);
+      color: var(--cream);
+      border: 2px solid var(--chocolate);
+      padding: 7px 14px;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .buy-btn:hover { background: var(--chocolate); }
+
+    /* ===== FEATURE CALLOUT BOX ===== */
+    .callout-box {
+      background: var(--avocado);
+      border: 5px double var(--harvest-gold);
+      padding: 28px 32px;
+      text-align: center;
+      margin: 0 0 40px;
+    }
+
+    .callout-box h3 {
+      font-family: 'Limelight', cursive;
+      font-size: 1.5rem;
+      color: var(--mustard);
+      margin-bottom: 12px;
+    }
+
+    .callout-box p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--cream);
+    }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 50px;
+    }
+
+    .testimonial {
+      background: rgba(245,230,200,0.06);
+      border-left: 5px solid var(--burnt-orange);
+      padding: 18px 20px;
+    }
+
+    .testimonial p {
+      font-size: 0.9rem;
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--cream);
+      margin-bottom: 10px;
+    }
+
+    .testimonial cite {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.8rem;
+      color: var(--mustard);
+      font-style: normal;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* ===== SIZE CHART ===== */
+    .size-chart {
+      background: var(--cream);
+      color: var(--chocolate);
+      border: 4px solid var(--burnt-orange);
+      padding: 24px;
+      margin-bottom: 40px;
+    }
+
+    .size-chart h3 {
+      font-family: 'Limelight', cursive;
+      color: var(--burnt-orange);
+      font-size: 1.2rem;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .size-chart table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+
+    .size-chart th {
+      background: var(--burnt-orange);
+      color: var(--cream);
+      padding: 8px 12px;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .size-chart td {
+      padding: 7px 12px;
+      border-bottom: 1px solid rgba(59,26,8,0.2);
+    }
+
+    .size-chart tr:nth-child(even) td {
+      background: rgba(204,85,0,0.08);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--chocolate);
+      border-top: 8px solid var(--burnt-orange);
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.8rem;
+      color: rgba(245,230,200,0.5);
+    }
+
+    footer .footer-logo {
+      font-family: 'Alfa Slab One', serif;
+      font-size: 1.4rem;
+      color: var(--harvest-gold);
+      margin-bottom: 10px;
+    }
+
+    footer p { line-height: 1.8; }
+
+    footer a { color: var(--burnt-orange); text-decoration: none; }
+
+    .stamp {
+      display: inline-block;
+      border: 3px solid var(--harvest-gold);
+      color: var(--harvest-gold);
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      margin: 8px 4px 0;
+      transform: rotate(-2deg);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo"><span>Plaid</span> Pants <span>Emporium</span></div>
+    <div class="tagline">America's Finest Trousers Since 1971</div>
+    <div class="established">★ Est. 1971 · Macomb, Illinois ★</div>
+  </header>
+
+  <nav>
+    <a href="#">Men's</a>
+    <a href="#">Women's</a>
+    <a href="#">Leisure Wear</a>
+    <a href="#">Sale Room</a>
+    <a href="#">Our Story</a>
+    <a href="#">Contact Us</a>
+  </nav>
+
+  <div class="hero-banner">
+    🎉 SPRING CLEARANCE — ALL WIDE-WALE CORDUROYS 40% OFF · USE CODE: BOOGIE72 🎉
+  </div>
+
+  <div class="container">
+
+    <h2 class="section-header">Featured Collection</h2>
+    <div class="divider">◆ ◆ ◆</div>
+
+    <div class="product-grid">
+
+      <div class="product-card">
+        <div class="product-swatch swatch-1"></div>
+        <div class="product-info">
+          <div class="product-name">The Macomb Powerbroker</div>
+          <div class="product-desc">Bold harvest-gold-on-saddle tartan. Double-knit polyester. Permanent press so you never miss a moment on the dance floor.</div>
+          <div class="product-footer">
+            <span class="price">$34.99</span>
+            <button class="buy-btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-swatch swatch-2"></div>
+        <div class="product-info">
+          <div class="product-name">The Avocado Achiever</div>
+          <div class="product-desc">Avocado green windowpane on forest. Flared leg, 2.5" waistband, four functioning belt loops. A statement for the man who has arrived.</div>
+          <div class="product-footer">
+            <span class="price">$39.99</span>
+            <button class="buy-btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-swatch swatch-3"></div>
+        <div class="product-info">
+          <div class="product-name">The Burnt Orange Bonanza</div>
+          <div class="product-desc">Classic white-on-burnt-orange block plaid. Machine washable. Goes with everything. Goes especially well with a turtleneck and a firm handshake.</div>
+          <div class="product-footer">
+            <span class="price">$32.50</span>
+            <button class="buy-btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-swatch swatch-4"></div>
+        <div class="product-info">
+          <div class="product-name">The Midnight Maverick</div>
+          <div class="product-desc">Navy base with gold accent lines and an orange overcheck. For the gentleman who needs to be seen across a dimly lit supper club.</div>
+          <div class="product-footer">
+            <span class="price">$44.99</span>
+            <button class="buy-btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-swatch swatch-5"></div>
+        <div class="product-info">
+          <div class="product-name">The Burgundy Big Deal</div>
+          <div class="product-desc">Cranberry field with yellow overplaid. Cuffed hem. Perfect for the office, the golf course, or any occasion where you intend to be remembered.</div>
+          <div class="product-footer">
+            <span class="price">$37.99</span>
+            <button class="buy-btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-swatch swatch-6"></div>
+        <div class="product-info">
+          <div class="product-name">The Forest Glen Special</div>
+          <div class="product-desc">Deep forest with pumpkin spice crosshatch. Our best-seller three years running. Available in Regular, Husky, and Athletic (32–44 waist).</div>
+          <div class="product-footer">
+            <span class="price">$36.50</span>
+            <button class="buy-btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end product-grid -->
+
+    <div class="callout-box">
+      <h3>Why Plaid Pants Emporium?</h3>
+      <p>
+        Every pair of trousers in our collection is sewn right here in the heartland by craftsmen who understand that a good pair of pants is not merely an article of clothing. It is a declaration. Our permanent-press double-knit polyester blends will outlast trends, outlast neighbors, and — if the customer reviews are to be believed — at least one marriage. We stand behind every seam with our Ironclad Satisfaction Guarantee or your money back within 30 days, no questions asked (a few questions asked).
+      </p>
+    </div>
+
+    <h2 class="section-header">What Our Customers Are Saying</h2>
+    <div class="divider">◆ ◆ ◆</div>
+
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>"I wore the Macomb Powerbroker to my nephew's confirmation and four separate people asked where I purchased my trousers. I told them it was none of their business, but I felt wonderful."</p>
+        <cite>— R. Wojcik, Schaumburg, IL</cite>
+      </div>
+      <div class="testimonial">
+        <p>"My wife said I looked like a couch. I said, Margaret, this is a $39 pant. She came around eventually."</p>
+        <cite>— D. Herschel, Toledo, OH</cite>
+      </div>
+      <div class="testimonial">
+        <p>"The Midnight Maverick arrived in three days and fits like it was made for me. It was not made for me — I ordered the wrong size — but a belt solved the whole situation."</p>
+        <cite>— F. Baumgartner, Fond du Lac, WI</cite>
+      </div>
+      <div class="testimonial">
+        <p>"I have purchased eleven pairs. My doctor says I need to stop. I disagree with my doctor on this specific issue."</p>
+        <cite>— W. Prochaska, Akron, OH</cite>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="size-chart">
+        <h3>Standard Sizing Guide</h3>
+        <table>
+          <thead>
+            <tr><th>Size</th><th>Waist</th><th>Inseam (Reg)</th><th>Inseam (Long)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>30</td><td>30"</td><td>30"</td><td>32"</td></tr>
+            <tr><td>32</td><td>32"</td><td>30"</td><td>32"</td></tr>
+            <tr><td>34</td><td>34"</td><td>30"</td><td>32"</td></tr>
+            <tr><td>36</td><td>36"</td><td>30"</td><td>32"</td></tr>
+            <tr><td>38</td><td>38"</td><td>29"</td><td>31"</td></tr>
+            <tr><td>40</td><td>40"</td><td>29"</td><td>31"</td></tr>
+            <tr><td>42</td><td>42"</td><td>29"</td><td>—</td></tr>
+            <tr><td>44</td><td>44"</td><td>29"</td><td>—</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:0.75rem; color:#5a3a1a; margin-top:10px;">* Husky sizing available upon request. Write to us at P.O. Box 441, Macomb IL.</p>
+      </div>
+
+      <div class="callout-box" style="margin:0; height:fit-content">
+        <h3>Free Shipping</h3>
+        <p style="margin-bottom:14px">On all orders over $50.00 within the contiguous United States. Alaska, Hawaii, and Puerto Rico: please allow 4–6 additional weeks and a small surcharge we are not proud of.</p>
+        <h3 style="margin-top:18px">Our Guarantee</h3>
+        <p>If you are not fully satisfied, return your purchase within 30 days for a full refund or store credit. Pants must be unworn. Or at least somewhat unworn. We will use our judgment.</p>
+      </div>
+    </div>
+
+  </div><!-- end container -->
+
+  <footer>
+    <div class="footer-logo">Plaid Pants Emporium</div>
+    <p>
+      129 N Randolph St · Macomb, Illinois 61455 · (309) 555-0174<br>
+      Open Mon–Sat 9:00 AM to 5:30 PM · Closed Sundays and most federal holidays<br>
+      <a href="mailto:hello@plaidpantsemporium.com">hello@plaidpantsemporium.com</a> · <a href="#">Catalog Request</a> · <a href="#">Wholesale Inquiries</a> · <a href="#">Employment</a>
+    </p>
+    <div>
+      <span class="stamp">Since 1971</span>
+      <span class="stamp">Family Owned</span>
+      <span class="stamp">Polyester Proud</span>
+    </div>
+    <p style="margin-top:18px; font-size:0.7rem; opacity:0.35">
+      © 1974 Plaid Pants Emporium. All rights reserved. Prices subject to change without notice.<br>
+      "The Polyester Proud" is a registered trademark. We are serious about that.
+    </p>
+  </footer>
+
+</body>
+</html>
