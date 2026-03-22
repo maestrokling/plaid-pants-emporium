@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Story — Plaid Pants Emporium</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Limelight&family=Special+Elite&family=Oswald:wght@300;400;700&display=swap');
+
+    :root {
+      --avocado: #6b7c2e;
+      --harvest-gold: #d4a017;
+      --burnt-orange: #cc5500;
+      --chocolate: #3b1a08;
+      --cream: #f5e6c8;
+      --mustard: #e3b505;
+      --olive: #808000;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--chocolate);
+      background-image:
+        repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(212,160,23,0.08) 20px, rgba(212,160,23,0.08) 40px),
+        repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(107,124,46,0.08) 20px, rgba(107,124,46,0.08) 40px);
+      font-family: 'Special Elite', serif;
+      color: var(--cream);
+    }
+
+    header {
+      background: var(--burnt-orange);
+      border-bottom: 8px solid var(--harvest-gold);
+      border-top: 8px solid var(--harvest-gold);
+      text-align: center;
+      padding: 24px 20px 18px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 8px, rgba(0,0,0,0.1) 8px, rgba(0,0,0,0.1) 9px),
+        repeating-linear-gradient(90deg, transparent, transparent 8px, rgba(0,0,0,0.1) 8px, rgba(0,0,0,0.1) 9px);
+      pointer-events: none;
+    }
+
+    .logo {
+      font-family: 'Alfa Slab One', serif;
+      font-size: clamp(2.2rem, 7vw, 5rem);
+      color: var(--cream);
+      text-shadow: 4px 4px 0 var(--chocolate), 7px 7px 0 rgba(0,0,0,0.3);
+      letter-spacing: 2px;
+      line-height: 1.1;
+      position: relative;
+    }
+
+    .logo a { color: inherit; text-decoration: none; }
+    .logo span { color: var(--harvest-gold); }
+
+    .tagline {
+      font-family: 'Limelight', cursive;
+      font-size: clamp(0.85rem, 2.5vw, 1.2rem);
+      color: var(--mustard);
+      margin-top: 8px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      position: relative;
+    }
+
+    nav {
+      background: var(--avocado);
+      padding: 10px 0;
+      text-align: center;
+      border-bottom: 4px solid var(--harvest-gold);
+    }
+
+    nav a {
+      color: var(--cream);
+      text-decoration: none;
+      margin: 0 18px;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    nav a:hover, nav a.active { color: var(--mustard); }
+
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 50px 24px 70px;
+    }
+
+    .page-title {
+      font-family: 'Alfa Slab One', serif;
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      color: var(--harvest-gold);
+      text-align: center;
+      text-shadow: 3px 3px 0 var(--chocolate);
+      margin-bottom: 10px;
+    }
+
+    .page-subtitle {
+      font-family: 'Limelight', cursive;
+      font-size: 1rem;
+      color: var(--mustard);
+      text-align: center;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+
+    .divider {
+      text-align: center;
+      color: var(--burnt-orange);
+      font-size: 1.3rem;
+      margin: 32px 0;
+      letter-spacing: 8px;
+    }
+
+    .story-section {
+      margin-bottom: 40px;
+    }
+
+    .story-section h2 {
+      font-family: 'Limelight', cursive;
+      font-size: 1.4rem;
+      color: var(--harvest-gold);
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+    }
+
+    .story-section p {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--cream);
+      margin-bottom: 16px;
+    }
+
+    .story-section p:last-child { margin-bottom: 0; }
+
+    .pull-quote {
+      background: var(--avocado);
+      border-left: 6px solid var(--harvest-gold);
+      padding: 20px 24px;
+      margin: 32px 0;
+      font-family: 'Limelight', cursive;
+      font-size: 1.15rem;
+      color: var(--mustard);
+      line-height: 1.5;
+    }
+
+    .pull-quote cite {
+      display: block;
+      margin-top: 10px;
+      font-family: 'Special Elite', serif;
+      font-size: 0.8rem;
+      color: var(--cream);
+      opacity: 0.7;
+      font-style: normal;
+    }
+
+    .timeline {
+      border-left: 4px solid var(--burnt-orange);
+      padding-left: 28px;
+      margin: 32px 0;
+    }
+
+    .timeline-item {
+      margin-bottom: 28px;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: '◆';
+      position: absolute;
+      left: -38px;
+      color: var(--harvest-gold);
+      font-size: 1rem;
+      top: 2px;
+    }
+
+    .timeline-item .year {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--harvest-gold);
+      letter-spacing: 2px;
+      margin-bottom: 5px;
+    }
+
+    .timeline-item p {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: var(--cream);
+    }
+
+    .founders-box {
+      background: rgba(245,230,200,0.05);
+      border: 3px double var(--harvest-gold);
+      padding: 28px 32px;
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .founders-box h3 {
+      font-family: 'Limelight', cursive;
+      color: var(--mustard);
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+
+    .founders-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    @media (max-width: 500px) { .founders-grid { grid-template-columns: 1fr; } }
+
+    .founder {
+      padding: 16px;
+      background: rgba(212,160,23,0.06);
+      border: 1px solid rgba(212,160,23,0.2);
+    }
+
+    .founder-name {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--harvest-gold);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .founder-title {
+      font-size: 0.75rem;
+      color: var(--burnt-orange);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .founder p {
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: var(--cream);
+      opacity: 0.85;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--burnt-orange);
+      text-decoration: none;
+      border-bottom: 2px solid var(--burnt-orange);
+      padding-bottom: 2px;
+    }
+
+    .back-link:hover { color: var(--harvest-gold); border-color: var(--harvest-gold); }
+
+    footer {
+      background: var(--chocolate);
+      border-top: 8px solid var(--burnt-orange);
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 0.78rem;
+      color: rgba(245,230,200,0.45);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo"><a href="index.html"><span>Plaid</span> Pants <span>Emporium</span></a></div>
+    <div class="tagline">America's Finest Trousers Since 1971</div>
+  </header>
+
+  <nav>
+    <a href="index.html">Men's</a>
+    <a href="index.html">Women's</a>
+    <a href="index.html">Leisure Wear</a>
+    <a href="index.html">Sale Room</a>
+    <a href="our-story.html" class="active">Our Story</a>
+    <a href="index.html">Contact Us</a>
+  </nav>
+
+  <div class="container">
+
+    <h1 class="page-title">Our Story</h1>
+    <div class="page-subtitle">Half a Century of Standing Out in the Right Trousers</div>
+
+    <div class="divider">◆ ◆ ◆</div>
+
+    <div class="story-section">
+      <h2>How It Started</h2>
+      <p>In the spring of 1971, Harold Buczkowski drove a 1967 Buick Skylark from Macomb, Illinois to a textile trade show in Chicago with $400 in his coat pocket and a belief so strong it bordered on the unreasonable: that the people of Western Illinois deserved better trousers.</p>
+      <p>Harold had spent twelve years as a floor manager at the McDonough County grain cooperative. He was good at his job. He was better at noticing that every man he worked alongside wore the same four pairs of pants, rotating them with the grim regularity of a man who has given up on the idea that Tuesdays can be different from Mondays.</p>
+      <p>His wife, Dolores, said he was out of his mind. Harold said he had read an article in a trades publication about double-knit polyester and he had a feeling. Dolores said a feeling was not a business plan. Harold agreed with her completely and opened the Plaid Pants Emporium on October 14, 1971, at 129 N Randolph St, Macomb, Illinois, in a space previously occupied by a failing watch repair shop.</p>
+      <p>The first week's sales totaled $38.50. Harold considered this a strong start.</p>
+    </div>
+
+    <div class="pull-quote">
+      "A man who wears a good plaid pant walks into a room and the room knows something has arrived."
+      <cite>— Harold Buczkowski, Founder, in a 1974 interview with the Macomb Journal</cite>
+    </div>
+
+    <div class="story-section">
+      <h2>The Iranian Connection</h2>
+      <p>The early years were prosperous but modest. That changed in 1973, when Harold received an unexpected letter from a procurement representative acting on behalf of Mohammad Reza Shah Pahlavi, Shah of Iran, who was in the process of modernizing the country's textile supply chain and had developed, through channels Harold never fully understood, an interest in American plaid woolen blends.</p>
+      <p>Over the next four years, Harold made three trips to Tehran. He does not speak of these trips in detail. What he will confirm is that the Shah had strong opinions about color saturation, that the palace carpets were extraordinary, and that he came home each time with an exclusive sourcing arrangement for a Persian wool-polyester blend that to this day forms the foundation of our premium Highlander line.</p>
+      <p>The arrangement ended abruptly in January of 1979 for reasons that require no explanation. Harold had seen it coming. He had diversified into domestic mills in 1977 on the advice of a man he met at an Elks Lodge meeting in Peoria, and the transition was, by his own description, "smoother than you'd think."</p>
+      <p>We still have the Shah's original letter. It is framed in the back office. We do not show it to people.</p>
+    </div>
+
+    <div class="story-section">
+      <h2>A Presidential Endorsement</h2>
+      <p>In the fall of 1972, a Secret Service advance team came through Macomb ahead of a campaign stop by President Lyndon B. Johnson — who had left office in January of 1969 but remained, by all accounts, a man who traveled with considerable logistical support. The advance team's lead agent, a tall fellow who declined to give his name, purchased three pairs of trousers: the Harvest Classic, the Burnt Ember, and what was then called simply the Big Texan Plaid.</p>
+      <p>It should be noted that Harold did not make these trips alone. In the early years of the Emporium, the Buczkowski family kept a pygmy goat named Stanisław — a compact, opinionated animal Harold had acquired from a farm outside Bushnell in the summer of 1971, shortly after the store opened. Stanisław lived behind the shop and had, from the beginning, a pronounced interest in fabric. Harold discovered early on that Stanisław would eat inferior polyester blends without hesitation, but consistently refused to touch the high-quality double-knit material Harold was sourcing for the floor. Harold considered this the most reliable quality test available to him, and calibrated his purchasing decisions accordingly for the better part of a decade.</p>
+      <p>Stanisław I passed away in 1982. He was replaced, after a period of mourning Harold described as "not brief," by Stanisław II — sourced that one time not from Bushnell but from a local Macomb physician and his young son who kept a small herd on the south side of town. Harold considered this a good omen. The Bushnell farm resumed supply with Stanisław III and has provided every subsequent Director. This tradition has continued without interruption across five generations. The current goat, Stanisław V, is eleven years old and entering his senior years. His inspections have become somewhat less rigorous than those of his predecessors. No one has said this to his face.</p>
+      <p>Harold did not meet the President personally. What he received, six weeks later, was a handwritten note on LBJ Ranch stationery that read, in its entirety: <em>"These are the pants I've been looking for. Send two more pairs of the big one. — L."</em></p>
+      <p>Lyndon Johnson passed away on January 22, 1973. Harold closed the store for the day. He has never offered the Big Texan Plaid at a discount, as a matter of respect.</p>
+    </div>
+
+    <div class="pull-quote">
+      "These are the pants I've been looking for. Send two more pairs of the big one."
+      <cite>— L., November 1972</cite>
+    </div>
+
+    <div class="story-section">
+      <h2>Five Decades</h2>
+      <p>Harold passed the business to his daughter, Patricia Buczkowski-Himmelfarb, in 1998. Patricia had spent the previous decade working in logistics for a regional department store chain and came back to Macomb with opinions about inventory management that Harold found troubling and correct in equal measure.</p>
+      <p>Under Patricia's leadership, the Emporium survived the casual Friday movement of the 1990s (Harold called it "a conspiracy against trousers"), the rise of athleisure, and a brief period in 2003 when a competitor opened a discount pants outlet four blocks away on the square. The competitor lasted eleven months. We do not gloat about this. We mention it only for completeness.</p>
+      <p>Today the Plaid Pants Emporium ships to all fifty states and maintains the same commitment Harold brought to that trade show in 1971: that somewhere between a pair of khakis and a full kilt lies the correct amount of plaid, and we know exactly where it is.</p>
+    </div>
+
+    <div class="divider">◆ ◆ ◆</div>
+
+    <div class="story-section">
+      <h2>A Brief Chronology</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="year">1971</div>
+          <p>Harold Buczkowski opens the Plaid Pants Emporium at 129 N Randolph St, Macomb, IL. First-week sales: $38.50. Harold describes this as encouraging.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="year">1971</div>
+          <p>Stanisław I, pygmy goat, acquired from a farm outside Bushnell, IL. Immediately begins eating inferior polyester samples and refusing quality material. Harold institutes him as Director of Quality Assurance. This is not a joke Harold is making.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="year">1972</div>
+          <p>Three pairs of trousers sold to Secret Service advance team. Handwritten note received from the 36th President of the United States. The Big Texan Plaid is retired from the discount rack permanently.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="year">1973</div>
+          <p>First contact from Iranian royal procurement office. Harold makes his first trip to Tehran. He returns with a sourcing agreement and a very good rug he refuses to put on the floor.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="year">1974</div>
+          <p>Harold gives his first and only press interview, to the Macomb Journal. The quote about a man walking into a room becomes the unofficial motto of the Emporium and is still printed on every shopping bag.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="year">1975</div>
+          <p>Stanisław I rejects an entire shipment of a competitor's wool blend during a routine quality check. Harold returns the shipment. The vendor disputes his methodology. Harold sends a photograph of the goat standing next to the rejected fabric. The vendor does not respond.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="year">1975–1978</div>
+          <p>Peak Persian wool years. The Highlander line is introduced. Regional distributors in Iowa and Missouri come on board. Harold hires his first employee, a young man named Gary, who is still here.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="year">1982</div>
+          <p>Stanisław I passes away at age 11. Harold closes the store for the afternoon. Gary cries, which Gary disputes but has never been able to fully disprove. Stanisław II is sourced not from Bushnell this time but locally — from a Macomb physician and his young son who had kept a small herd on the south side of town. Harold considered this a good omen. The Bushnell farm resumed supply from Stanisław III onward.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="year">1979</div>
+          <p>Iranian supply chain abruptly discontinued. Domestic mill transition completed. Harold says almost nothing about this period publicly. Gary says it was fine, mostly.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="year">1998</div>
+          <p>Harold retires. Patricia Buczkowski-Himmelfarb assumes ownership. New inventory system installed. Harold visits once a week and has opinions about the new system that he keeps largely to himself.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="year">2003</div>
+          <p>Competitor opens four blocks away. Competitor closes eleven months later. No comment.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="year">2024</div>
+          <p>Online store launches. Ships to all fifty states. Harold, now 84, approves of this development, though he notes that you cannot feel the weight of a fabric through a screen and considers this a design flaw in the internet.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="founders-box">
+      <h3>The People Behind the Pants</h3>
+      <div class="founders-grid">
+        <div class="founder">
+          <div class="founder-name">Harold Buczkowski</div>
+          <div class="founder-title">Founder & Chairman Emeritus</div>
+          <p>Opened the Emporium in 1971 with $400, a Buick Skylark, and a conviction bordering on the unreasonable. Now 84. Still stops by on Thursdays. Still has opinions about the inventory system.</p>
+        </div>
+        <div class="founder">
+          <div class="founder-name">Patricia Buczkowski-Himmelfarb</div>
+          <div class="founder-title">President & Owner</div>
+          <p>Harold's daughter. Took over in 1998. Modernized operations, survived two recessions and one competitor, launched the online store. Describes her management philosophy as "Dad's instincts with better spreadsheets."</p>
+        </div>
+        <div class="founder">
+          <div class="founder-name">Gary</div>
+          <div class="founder-title">Senior Associate, Fitting Room Operations</div>
+          <p>Has worked at the Emporium since 1976. Remembers the Persian wool years fondly. His last name is Stellbrink, but he has been Gary for so long that even his wife calls him that at the store.</p>
+        </div>
+        <div class="founder">
+          <div class="founder-name">Dolores Buczkowski</div>
+          <div class="founder-title">Co-Founder (Reluctant)</div>
+          <p>Said Harold was out of his mind in 1971. Worked the register every Saturday for twenty-two years. Passed away in 2009. The store was closed the day of her funeral and Harold put a sign in the window that said "Closed for Dolores." That's all it said.</p>
+        </div>
+        <div class="founder">
+          <div class="founder-name">Stanisław V</div>
+          <div class="founder-title">Director of Quality Assurance (Fifth Generation)</div>
+          <p>Pygmy goat. Acquired 2015 from the Bushnell farm. Has his great-great-grandfather's eyes and the same fundamental suspicion of inferior fabric, though at eleven years old he is entering his senior years and his inspections have become somewhat less rigorous. No one has said this to his face. Lives behind the store in a pen Patricia had professionally landscaped in 2019. Harold considers this unnecessary but has not said so directly.</p>
+        </div>
+      </div>
+    </div>
+
+    <p style="text-align:center; font-size:0.88rem; line-height:1.8; opacity:0.75; margin-bottom:30px;">
+      The Plaid Pants Emporium is a family business.<br>
+      We have been here since 1971 and we intend to remain.<br>
+      Thank you for shopping with us.
+    </p>
+
+    <div style="text-align:center;">
+      <a href="index.html" class="back-link">← Back to the Store</a>
+    </div>
+
+  </div>
+
+  <footer>
+    © 1974 Plaid Pants Emporium · 129 N Randolph St, Macomb, Illinois 61455 · <a href="mailto:hello@plaidpantsemporium.com" style="color:var(--burnt-orange)">hello@plaidpantsemporium.com</a><br>
+    Prices subject to change. The Shah's letter is not for sale.
+  </footer>
+
+</body>
+</html>
