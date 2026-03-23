@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Customer Hall of Fame — Plaid Pants Emporium</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Limelight&family=Special+Elite&family=Oswald:wght@300;400;700&display=swap');
+    :root { --avocado:#6b7c2e; --harvest-gold:#d4a017; --burnt-orange:#cc5500; --chocolate:#3b1a08; --cream:#f5e6c8; --mustard:#e3b505; --olive:#808000; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { background-color:var(--chocolate); background-image: repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(212,160,23,.08) 20px,rgba(212,160,23,.08) 40px), repeating-linear-gradient(-45deg,transparent,transparent 20px,rgba(107,124,46,.08) 20px,rgba(107,124,46,.08) 40px); font-family:'Special Elite',serif; color:var(--cream); }
+    header { background:var(--burnt-orange); border-bottom:8px solid var(--harvest-gold); border-top:8px solid var(--harvest-gold); text-align:center; padding:24px 20px 18px; }
+    .logo { font-family:'Alfa Slab One',serif; font-size:clamp(2.2rem,7vw,5rem); color:var(--cream); text-shadow:4px 4px 0 var(--chocolate),7px 7px 0 rgba(0,0,0,.3); letter-spacing:2px; line-height:1.1; }
+    .logo span { color:var(--harvest-gold); }
+    .logo a { text-decoration:none; color:inherit; }
+    .tagline { font-family:'Limelight',cursive; font-size:clamp(.85rem,2.5vw,1.2rem); color:var(--mustard); margin-top:8px; letter-spacing:3px; text-transform:uppercase; }
+    nav { background:var(--avocado); padding:10px 0; text-align:center; border-bottom:4px solid var(--harvest-gold); flex-wrap:wrap; }
+    nav a { color:var(--cream); text-decoration:none; margin:0 10px; font-family:'Oswald',sans-serif; font-weight:700; font-size:.82rem; letter-spacing:2px; text-transform:uppercase; transition:color .2s; }
+    nav a:hover, nav a.active { color:var(--mustard); }
+    .container { max-width:1000px; margin:0 auto; padding:40px 20px; }
+    .section-header { font-family:'Limelight',cursive; font-size:clamp(1.4rem,4vw,2.2rem); color:var(--harvest-gold); text-align:center; margin:0 0 10px; text-shadow:2px 2px 0 var(--chocolate); letter-spacing:2px; }
+    .subtitle { text-align:center; font-size:.95rem; color:rgba(245,230,200,.7); margin-bottom:30px; font-style:italic; }
+    .divider { text-align:center; color:var(--burnt-orange); font-size:1.5rem; margin:10px 0 40px; letter-spacing:6px; }
+    .entry { background:var(--cream); color:var(--chocolate); border:4px solid var(--harvest-gold); box-shadow:6px 6px 0 var(--harvest-gold); margin-bottom:32px; display:grid; grid-template-columns:1fr 3fr; }
+    @media(max-width:600px){ .entry { grid-template-columns:1fr; } }
+    .entry-label { background:var(--burnt-orange); color:var(--cream); padding:24px 20px; display:flex; flex-direction:column; justify-content:center; }
+    .entry-number { font-family:'Alfa Slab One',serif; font-size:2.5rem; color:var(--harvest-gold); line-height:1; }
+    .entry-name { font-family:'Oswald',sans-serif; font-weight:700; font-size:1rem; letter-spacing:1px; text-transform:uppercase; margin-top:6px; }
+    .entry-city { font-size:.8rem; opacity:.8; margin-top:2px; }
+    .entry-pant { font-family:'Oswald',sans-serif; font-size:.75rem; letter-spacing:2px; text-transform:uppercase; margin-top:8px; color:var(--mustard); }
+    .entry-body { padding:24px; }
+    .entry-story { font-size:.9rem; line-height:1.7; color:#3b1a08; margin-bottom:16px; }
+    .harold-note { background:#f0d8a8; border-left:4px solid var(--burnt-orange); padding:10px 14px; font-style:italic; font-size:.85rem; color:#5a3a1a; position:relative; }
+    .harold-note::before { content:'Harold:'; font-style:normal; font-family:'Oswald',sans-serif; font-weight:700; font-size:.75rem; letter-spacing:1px; text-transform:uppercase; color:var(--burnt-orange); display:block; margin-bottom:4px; }
+    footer { background:var(--chocolate); border-top:8px solid var(--burnt-orange); text-align:center; padding:30px 20px; font-size:.8rem; color:rgba(245,230,200,.5); }
+    footer a { color:var(--burnt-orange); text-decoration:none; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><a href="index.html"><span>Plaid</span> Pants <span>Emporium</span></a></div>
+    <div class="tagline">America's Finest Trousers Since 1971</div>
+  </header>
+  <nav>
+    <a href="index.html">Men's</a>
+    <a href="index.html">Women's</a>
+    <a href="index.html">Leisure Wear</a>
+    <a href="index.html">Sale Room</a>
+    <a href="our-story.html">Our Story</a>
+    <a href="plaid-finder.html">Plaid Finder</a>
+    <a href="hall-of-fame.html" class="active">Hall of Fame</a>
+    <a href="complaint-box.html">Complaint Box</a>
+    <a href="#">Contact Us</a>
+  </nav>
+  <div class="container">
+    <h2 class="section-header">The Customer Hall of Fame</h2>
+    <p class="subtitle">Letters received, read, and annotated by Harold personally. Displayed here with the customers' knowledge and, in most cases, their blessing.</p>
+    <div class="divider">◆ ◆ ◆</div>
+
+    <div class="entry">
+      <div class="entry-label">
+        <div class="entry-number">01</div>
+        <div class="entry-name">R. Wojcik</div>
+        <div class="entry-city">Schaumburg, IL</div>
+        <div class="entry-pant">The Macomb Powerbroker</div>
+      </div>
+      <div class="entry-body">
+        <p class="entry-story">"I wore the Macomb Powerbroker to my nephew's confirmation and four separate people asked where I purchased my trousers. I told them it was none of their business, but I felt wonderful. My wife says I have become insufferable since the purchase. I consider this a reasonable tradeoff."</p>
+        <div class="harold-note">A man who can be insufferable in a quality pant is a man who has his priorities correctly ordered.</div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-label">
+        <div class="entry-number">02</div>
+        <div class="entry-name">D. Herschel</div>
+        <div class="entry-city">Toledo, OH</div>
+        <div class="entry-pant">The Avocado Achiever</div>
+      </div>
+      <div class="entry-body">
+        <p class="entry-story">"My wife said I looked like a couch. I said, Margaret, this is a $39 pant. She came around eventually — specifically, at the Dobrowski wedding in April, when three people complimented the color. Margaret has not mentioned the couch again. I have purchased a second pair as a precaution."</p>
+        <div class="harold-note">Margaret is not wrong about the couch. She is also not right enough to matter.</div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-label">
+        <div class="entry-number">03</div>
+        <div class="entry-name">F. Baumgartner</div>
+        <div class="entry-city">Fond du Lac, WI</div>
+        <div class="entry-pant">The Midnight Maverick</div>
+      </div>
+      <div class="entry-body">
+        <p class="entry-story">"The Midnight Maverick arrived in three days and fits like it was made for me. It was not made for me — I ordered the wrong size — but a belt solved the whole situation. I have since recommended the Emporium to my brother-in-law Gerald, who has wide hips and strong opinions about trousers. He found the experience formative."</p>
+        <div class="harold-note">The belt is an underappreciated tool. Gerald should call us directly.</div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-label">
+        <div class="entry-number">04</div>
+        <div class="entry-name">W. Prochaska</div>
+        <div class="entry-city">Akron, OH</div>
+        <div class="entry-pant">Multiple</div>
+      </div>
+      <div class="entry-body">
+        <p class="entry-story">"I have purchased eleven pairs. My doctor says I need to stop. I disagree with my doctor on this specific issue. He is a good doctor and I trust him on most things, including my cholesterol, which is also a matter he has strong opinions about. The trousers are non-negotiable."</p>
+        <div class="harold-note">A man who knows his limits in all areas except the right ones is a man I respect.</div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-label">
+        <div class="entry-number">05</div>
+        <div class="entry-name">G. Kowalczyk</div>
+        <div class="entry-city">Green Bay, WI</div>
+        <div class="entry-pant">The Forest Glen Special</div>
+      </div>
+      <div class="entry-body">
+        <p class="entry-story">"My son said I looked like a tablecloth at Thanksgiving. I said, son, this tablecloth cost thirty-seven dollars and it will outlive both of us. He has not brought it up again. My daughter-in-law, however, asked for the website. I gave it to her. She has since purchased a pair for her father, who lives in Minnesota and reportedly cried."</p>
+        <div class="harold-note">The son will come around. They always do, usually around age forty-five.</div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-label">
+        <div class="entry-number">06</div>
+        <div class="entry-name">T. Riverbend</div>
+        <div class="entry-city">Springfield, IL</div>
+        <div class="entry-pant">The Avocado Achiever</div>
+      </div>
+      <div class="entry-body">
+        <p class="entry-story">"I was skeptical about ordering pants from a catalog. Then the Avocado Achiever arrived and I wore them to a job interview. I got the job. I am not saying the pants are responsible. I am also not not saying that. I have since worn them to every important meeting I have attended in a professional capacity."</p>
+        <div class="harold-note">I have received seventeen letters making this exact claim. I believe all of them.</div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-label">
+        <div class="entry-number">07</div>
+        <div class="entry-name">B. Szymanski</div>
+        <div class="entry-city">Rockford, IL</div>
+        <div class="entry-pant">The Burnt Orange Bonanza</div>
+      </div>
+      <div class="entry-body">
+        <p class="entry-story">"I purchased the Burnt Orange Bonanza for a retirement party and wore it to forty-seven subsequent occasions including two funerals, one of which was my own brother's, and he had specifically requested in his will that mourners wear something with some life to it. I feel I honored his wishes more completely than anyone else in attendance."</p>
+        <div class="harold-note">This is exactly what the Bonanza was made for. Rest well, the brother.</div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-label">
+        <div class="entry-number">08</div>
+        <div class="entry-name">C. Heikkinen</div>
+        <div class="entry-city">Marquette, MI</div>
+        <div class="entry-pant">The Burgundy Big Deal</div>
+      </div>
+      <div class="entry-body">
+        <p class="entry-story">"I drive a snowplow for the county and there are not many opportunities to dress well in my line of work. I wear the Burgundy Big Deal on Sundays, to church, and to the monthly meeting of the Western Upper Peninsula Coin and Stamp Society, where I am the only member under sixty-two. The other members have asked about the pants. I have directed them here."</p>
+        <div class="harold-note">The Coin and Stamp Society of Western UP has now placed four orders. We are grateful to Mr. Heikkinen.</div>
+      </div>
+    </div>
+
+  </div>
+  <footer>
+    <p>129 N Randolph St · Macomb, Illinois 61455 · (309) 555-0174<br>
+    <a href="mailto:hello@plaidpantsemporium.com">hello@plaidpantsemporium.com</a></p>
+    <p style="margin-top:10px;font-size:.7rem;opacity:.35">© 1974 Plaid Pants Emporium. All rights reserved. Letters are reprinted with permission, except Mr. Prochaska's, who said "go ahead, I don't care."</p>
+  </footer>
+</body>
+</html>

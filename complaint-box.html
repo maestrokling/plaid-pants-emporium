@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Complaint Box — Plaid Pants Emporium</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Limelight&family=Special+Elite&family=Oswald:wght@300;400;700&display=swap');
+    :root { --avocado:#6b7c2e; --harvest-gold:#d4a017; --burnt-orange:#cc5500; --chocolate:#3b1a08; --cream:#f5e6c8; --mustard:#e3b505; --olive:#808000; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { background-color:var(--chocolate); background-image: repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(212,160,23,.08) 20px,rgba(212,160,23,.08) 40px), repeating-linear-gradient(-45deg,transparent,transparent 20px,rgba(107,124,46,.08) 20px,rgba(107,124,46,.08) 40px); font-family:'Special Elite',serif; color:var(--cream); }
+    header { background:var(--burnt-orange); border-bottom:8px solid var(--harvest-gold); border-top:8px solid var(--harvest-gold); text-align:center; padding:24px 20px 18px; }
+    .logo { font-family:'Alfa Slab One',serif; font-size:clamp(2.2rem,7vw,5rem); color:var(--cream); text-shadow:4px 4px 0 var(--chocolate),7px 7px 0 rgba(0,0,0,.3); letter-spacing:2px; line-height:1.1; }
+    .logo span { color:var(--harvest-gold); }
+    .logo a { text-decoration:none; color:inherit; }
+    .tagline { font-family:'Limelight',cursive; font-size:clamp(.85rem,2.5vw,1.2rem); color:var(--mustard); margin-top:8px; letter-spacing:3px; text-transform:uppercase; }
+    nav { background:var(--avocado); padding:10px 0; text-align:center; border-bottom:4px solid var(--harvest-gold); }
+    nav a { color:var(--cream); text-decoration:none; margin:0 10px; font-family:'Oswald',sans-serif; font-weight:700; font-size:.82rem; letter-spacing:2px; text-transform:uppercase; transition:color .2s; }
+    nav a:hover, nav a.active { color:var(--mustard); }
+    .container { max-width:800px; margin:0 auto; padding:40px 20px; }
+    .section-header { font-family:'Limelight',cursive; font-size:clamp(1.4rem,4vw,2.2rem); color:var(--harvest-gold); text-align:center; margin:0 0 10px; text-shadow:2px 2px 0 var(--chocolate); letter-spacing:2px; }
+    .subtitle { text-align:center; font-size:.95rem; color:rgba(245,230,200,.7); margin-bottom:30px; font-style:italic; }
+    .divider { text-align:center; color:var(--burnt-orange); font-size:1.5rem; margin:10px 0 30px; letter-spacing:6px; }
+    .form-box { background:var(--cream); color:var(--chocolate); border:4px solid var(--harvest-gold); padding:30px; margin-bottom:40px; }
+    .form-box h3 { font-family:'Limelight',cursive; font-size:1.3rem; color:var(--burnt-orange); margin-bottom:20px; }
+    .form-row { margin-bottom:16px; }
+    .form-row label { display:block; font-family:'Oswald',sans-serif; font-weight:700; font-size:.8rem; letter-spacing:2px; text-transform:uppercase; color:var(--chocolate); margin-bottom:6px; }
+    .form-row input, .form-row select, .form-row textarea { width:100%; padding:10px 12px; border:2px solid #c8a87a; background:#fdf5e0; font-family:'Special Elite',serif; font-size:.9rem; color:var(--chocolate); }
+    .form-row textarea { height:100px; resize:vertical; }
+    .submit-btn { background:var(--burnt-orange); color:var(--cream); border:2px solid var(--chocolate); padding:10px 28px; font-family:'Oswald',sans-serif; font-weight:700; font-size:.9rem; letter-spacing:2px; text-transform:uppercase; cursor:pointer; transition:background .2s; }
+    .submit-btn:hover { background:var(--chocolate); }
+    .response-box { display:none; background:var(--avocado); border:3px solid var(--harvest-gold); padding:24px; margin-top:20px; }
+    .response-box.visible { display:block; }
+    .response-text { font-size:.95rem; line-height:1.7; margin-bottom:16px; }
+    .response-sig { font-family:'Oswald',sans-serif; font-size:.85rem; letter-spacing:1px; color:var(--mustard); border-top:1px solid rgba(212,160,23,.4); padding-top:12px; margin-top:12px; }
+    .resolved-section { margin-top:20px; }
+    .resolved-section h3 { font-family:'Limelight',cursive; font-size:1.3rem; color:var(--harvest-gold); margin-bottom:20px; }
+    .resolved-item { background:rgba(245,230,200,.05); border-left:4px solid var(--burnt-orange); padding:20px; margin-bottom:20px; }
+    .resolved-item .complaint-header { font-family:'Oswald',sans-serif; font-size:.8rem; letter-spacing:2px; text-transform:uppercase; color:var(--mustard); margin-bottom:8px; }
+    .resolved-item .complaint-text { font-size:.9rem; line-height:1.6; font-style:italic; margin-bottom:12px; color:rgba(245,230,200,.85); }
+    .resolved-item .complaint-response { font-size:.85rem; line-height:1.6; color:var(--cream); border-top:1px solid rgba(212,160,23,.3); padding-top:12px; }
+    .resolved-item .complaint-response strong { color:var(--mustard); font-family:'Oswald',sans-serif; font-size:.75rem; letter-spacing:1px; text-transform:uppercase; display:block; margin-bottom:4px; }
+    .stamp-resolved { display:inline-block; border:2px solid #4a8b3a; color:#4a8b3a; font-family:'Oswald',sans-serif; font-size:.65rem; font-weight:700; letter-spacing:3px; text-transform:uppercase; padding:3px 8px; margin-left:10px; transform:rotate(-2deg); vertical-align:middle; }
+    footer { background:var(--chocolate); border-top:8px solid var(--burnt-orange); text-align:center; padding:30px 20px; font-size:.8rem; color:rgba(245,230,200,.5); }
+    footer a { color:var(--burnt-orange); text-decoration:none; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><a href="index.html"><span>Plaid</span> Pants <span>Emporium</span></a></div>
+    <div class="tagline">America's Finest Trousers Since 1971</div>
+  </header>
+  <nav>
+    <a href="index.html">Men's</a>
+    <a href="index.html">Women's</a>
+    <a href="index.html">Leisure Wear</a>
+    <a href="index.html">Sale Room</a>
+    <a href="our-story.html">Our Story</a>
+    <a href="plaid-finder.html">Plaid Finder</a>
+    <a href="hall-of-fame.html">Hall of Fame</a>
+    <a href="complaint-box.html" class="active">Complaint Box</a>
+    <a href="#">Contact Us</a>
+  </nav>
+  <div class="container">
+    <h2 class="section-header">The Complaint Box</h2>
+    <p class="subtitle">We take all concerns seriously. We have never changed anything as a result of them, but we take them seriously.</p>
+    <div class="divider">◆ ◆ ◆</div>
+
+    <div class="form-box">
+      <h3>Submit a Complaint</h3>
+      <form id="complaint-form">
+        <div class="form-row">
+          <label>Your Name</label>
+          <input type="text" id="f-name" required placeholder="First and last name, please">
+        </div>
+        <div class="form-row">
+          <label>City</label>
+          <input type="text" id="f-city" required placeholder="City, State">
+        </div>
+        <div class="form-row">
+          <label>Pant Purchased</label>
+          <select id="f-pant">
+            <option value="">— Select a pant —</option>
+            <option>The Macomb Powerbroker</option>
+            <option>The Avocado Achiever</option>
+            <option>The Burnt Orange Bonanza</option>
+            <option>The Midnight Maverick</option>
+            <option>The Burgundy Big Deal</option>
+            <option>The Forest Glen Special</option>
+            <option>The Macomb Mahogany</option>
+            <option>The Purple Haze Highlander</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>Your Complaint</label>
+          <textarea id="f-complaint" required placeholder="Please describe your concern in full. Harold reads these himself."></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Submit Complaint</button>
+      </form>
+      <div class="response-box" id="response">
+        <div class="response-text" id="response-text"></div>
+        <div class="response-sig">— Harold Buczkowski, Founder &amp; President<br><span style="font-size:.75rem;opacity:.7">Plaid Pants Emporium · Est. 1971 · Macomb, Illinois</span></div>
+      </div>
+    </div>
+
+    <div class="resolved-section">
+      <h3>Recent Complaints <span class="stamp-resolved">Resolved</span></h3>
+
+      <div class="resolved-item">
+        <div class="complaint-header">M. Grabowski, Peoria, IL · The Forest Glen Special</div>
+        <div class="complaint-text">"The color on the Forest Glen Special is described as 'deep forest' on your website. The color I received appears to be more of a 'medium forest' or possibly a 'forest at dusk.' I feel this is misleading."</div>
+        <div class="complaint-response"><strong>Our Response</strong>We have reviewed your concern and stand behind the pant. The depth of a forest, like the depth of a man's character, is not fixed. It varies with the light. We consider the pant correctly named.</div>
+      </div>
+
+      <div class="resolved-item">
+        <div class="complaint-header">P. Nowakowski, Decatur, IL · The Midnight Maverick</div>
+        <div class="complaint-text">"I wore the Midnight Maverick to a supper club as your description suggested and was asked to leave. The management said the pants were 'disruptive.' I do not understand how a pant can be disruptive. I would like an explanation."</div>
+        <div class="complaint-response"><strong>Our Response</strong>We have reviewed your concern and remain sympathetic, though not surprised. The Midnight Maverick has been described as disruptive in seven separate incident reports since 1974. We consider this the intended effect. We recommend a different supper club.</div>
+      </div>
+
+      <div class="resolved-item">
+        <div class="complaint-header">E. Lichtenstein, Champaign, IL · The Avocado Achiever</div>
+        <div class="complaint-text">"My pants arrived and they smell like a warehouse. Not a bad warehouse, but a warehouse. Is this normal?"</div>
+        <div class="complaint-response"><strong>Our Response</strong>We have reviewed your concern. Yes. The smell is the double-knit polyester blend interacting with the storage environment. It resolves after two washes or one Elks Lodge meeting, whichever comes first. We stand behind the pant.</div>
+      </div>
+
+      <div class="resolved-item">
+        <div class="complaint-header">J. Przybylski, Joliet, IL · The Macomb Powerbroker</div>
+        <div class="complaint-text">"I purchased the Macomb Powerbroker and my wife says I look like a man who would lose a very small amount of money at a casino. I am not sure if this is a compliment. Please advise."</div>
+        <div class="complaint-response"><strong>Our Response</strong>We have reviewed your concern and consulted among ourselves. The consensus is that it is a compliment. A man who loses a small amount at a casino is a man who goes to casinos, which suggests a certain confidence. We stand behind the pant and behind your wife's assessment.</div>
+      </div>
+
+      <div class="resolved-item">
+        <div class="complaint-header">D. Wisniewski, Waukegan, IL · The Purple Haze Highlander</div>
+        <div class="complaint-text">"I ordered the Purple Haze Highlander and my neighbor has not spoken to me since. We used to wave. Now he does not wave. I would like the Emporium to take some responsibility for this."</div>
+        <div class="complaint-response"><strong>Our Response</strong>We have reviewed your concern with great care and cannot accept responsibility. The Highlander does not cause neighbors to stop waving. It reveals neighbors who were not fully committed to waving in the first place. We consider this a service. We stand behind the pant.</div>
+      </div>
+
+    </div>
+  </div>
+  <footer>
+    <p>129 N Randolph St · Macomb, Illinois 61455 · (309) 555-0174<br>
+    <a href="mailto:hello@plaidpantsemporium.com">hello@plaidpantsemporium.com</a></p>
+    <p style="margin-top:10px;font-size:.7rem;opacity:.35">© 1974 Plaid Pants Emporium. All complaints are read. None have been acted upon. Harold considers this a reasonable record.</p>
+  </footer>
+
+  <script>
+    const responses = [
+      "We have reviewed your concern with the full attention it deserves and stand behind the pant. The pant has not changed. Our position has not changed. We appreciate you writing.",
+      "We have reviewed your concern and, frankly, we are not entirely certain what to make of it. Nevertheless, we stand behind the pant. The pant was made correctly. We are confident of this.",
+      "We have reviewed your concern and considered it philosophically. A pant, like a man, cannot be all things to all people. We stand behind this pant's right to be exactly what it is.",
+      "We have reviewed your concern and want you to know that Harold himself read this one. He sat with it for a moment. He then set it down and said, 'We stand behind the pant.' So we do.",
+      "We have reviewed your concern and while we are sympathetic — genuinely sympathetic — we find that our sympathy does not alter our fundamental position, which is that we stand behind the pant.",
+      "We have reviewed your concern and want to be direct with you: we have never, in fifty-three years of operation, received a complaint that changed our view of a pant. We do not expect to start now. We stand behind the pant. Thank you for writing."
+    ];
+    let responseIndex = 0;
+    document.getElementById('complaint-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('f-name').value;
+      const box = document.getElementById('response');
+      const text = document.getElementById('response-text');
+      text.textContent = `Dear ${name.split(' ')[0]}, — ${responses[responseIndex % responses.length]}`;
+      responseIndex++;
+      box.classList.add('visible');
+      this.reset();
+      box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  </script>
+</body>
+</html>

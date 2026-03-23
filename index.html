@@ -509,6 +509,9 @@
     <a href="#">Leisure Wear</a>
     <a href="#">Sale Room</a>
     <a href="our-story.html">Our Story</a>
+    <a href="plaid-finder.html">Plaid Finder</a>
+    <a href="hall-of-fame.html">Hall of Fame</a>
+    <a href="complaint-box.html">Complaint Box</a>
     <a href="#">Contact Us</a>
   </nav>
 
@@ -532,6 +535,7 @@
             <span class="price">$34.99</span>
             <button class="buy-btn">Add to Cart</button>
           </div>
+          <div class="inventory-badge" id="inv-powerbroker" style="margin-top:8px;font-family:'Oswald',sans-serif;font-size:.75rem;letter-spacing:1px;color:var(--burnt-orange);"></div>
         </div>
       </div>
 
@@ -568,6 +572,7 @@
             <span class="price">$44.99</span>
             <button class="buy-btn">Add to Cart</button>
           </div>
+          <div class="inventory-badge" id="inv-maverick" style="margin-top:8px;font-family:'Oswald',sans-serif;font-size:.75rem;letter-spacing:1px;color:var(--burnt-orange);"></div>
         </div>
       </div>
 
@@ -707,5 +712,62 @@
     </p>
   </footer>
 
+  <script>
+    // Seeded RNG — same seed = same daily starting inventory for all visitors
+    function seededRng(seed) {
+      let s = seed;
+      return function() {
+        s = (s * 1664525 + 1013904223) & 0xffffffff;
+        return (s >>> 0) / 0xffffffff;
+      };
+    }
+
+    function getDailyInventory(pantKey, minStock, maxStock) {
+      const today = new Date();
+      const seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate() + pantKey.charCodeAt(0);
+      const rng = seededRng(seed);
+      const base = Math.floor(rng() * (maxStock - minStock + 1)) + minStock;
+      // Retrieve or set today's starting count in localStorage
+      const storageKey = `inv_${pantKey}_${today.toISOString().slice(0,10)}`;
+      const stored = localStorage.getItem(storageKey);
+      if (!stored) {
+        localStorage.setItem(storageKey, base);
+        return base;
+      }
+      return parseInt(stored, 10);
+    }
+
+    function updateBadge(elementId, count) {
+      const el = document.getElementById(elementId);
+      if (!el) return;
+      if (count <= 5) {
+        el.innerHTML = `⚠ Only ${count} left in stock`;
+        el.style.color = 'var(--burnt-orange)';
+      } else {
+        el.innerHTML = `${count} in stock`;
+        el.style.color = 'rgba(245,230,200,0.5)';
+      }
+    }
+
+    const pantKeys = { maverick: { el: 'inv-maverick', min: 4, max: 11 }, powerbroker: { el: 'inv-powerbroker', min: 3, max: 9 } };
+    const counts = {};
+
+    Object.entries(pantKeys).forEach(([key, cfg]) => {
+      counts[key] = getDailyInventory(key, cfg.min, cfg.max);
+      updateBadge(cfg.el, counts[key]);
+    });
+
+    // Tick down every ~7 minutes while on page (floor at 3)
+    setInterval(() => {
+      const today = new Date().toISOString().slice(0,10);
+      Object.entries(pantKeys).forEach(([key, cfg]) => {
+        if (counts[key] > 3) {
+          counts[key]--;
+          localStorage.setItem(`inv_${key}_${today}`, counts[key]);
+          updateBadge(cfg.el, counts[key]);
+        }
+      });
+    }, 7 * 60 * 1000);
+  </script>
 </body>
 </html>
