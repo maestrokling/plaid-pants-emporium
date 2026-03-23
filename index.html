@@ -699,7 +699,7 @@
     <p>
       129 N Randolph St · Macomb, Illinois 61455 · (309) 555-0174<br>
       Open Mon–Sat 9:00 AM to 5:30 PM · Closed Sundays and most federal holidays<br>
-      <a href="mailto:hello@plaidpantsemporium.com">hello@plaidpantsemporium.com</a> · <a href="#">Catalog Request</a> · <a href="#">Wholesale Inquiries</a> · <a href="employment.html">Employment</a>
+      <a href="mailto:hello@plaidpantsemporium.com">hello@plaidpantsemporium.com</a> · <a href="catalog.html">Catalog Request</a> · <a href="wholesale.html">Wholesale Inquiries</a> · <a href="employment.html">Employment</a> · <a href="sovereign-waitlist.html">The Sovereign</a>
     </p>
     <div>
       <span class="stamp">Since 1971</span>
@@ -727,6 +727,37 @@
   </div>
 
   <script>
+    // Price triple-click easter egg
+    (function(){
+      const tooltip = document.createElement('div');
+      tooltip.style.cssText = 'display:none;position:fixed;background:#3b1a08;color:#f5e6c8;border:2px solid #d4a017;padding:12px 16px;font-family:Special Elite,serif;font-size:.85rem;max-width:280px;line-height:1.6;z-index:9998;pointer-events:none;box-shadow:4px 4px 0 #d4a017;';
+      document.body.appendChild(tooltip);
+      const msgs = [
+        "Harold says this price is firm. Harold has never negotiated on price. Gary once tried. That was 1977. Gary does not try anymore.",
+        "This price has not changed since 1974. Harold considers this a point of pride. Patricia considers it a pricing problem. They have agreed to disagree.",
+        "Harold set this price after considerable reflection. He has reflected on it several times since. The price has not moved."
+      ];
+      let clicks = {}; let timer = {};
+      document.querySelectorAll('.price').forEach((el, i) => {
+        clicks[i] = 0;
+        el.style.cursor = 'pointer';
+        el.addEventListener('click', function(e) {
+          clicks[i]++;
+          clearTimeout(timer[i]);
+          if (clicks[i] >= 3) {
+            clicks[i] = 0;
+            tooltip.textContent = msgs[i % msgs.length];
+            tooltip.style.display = 'block';
+            tooltip.style.left = Math.min(e.clientX + 10, window.innerWidth - 300) + 'px';
+            tooltip.style.top = Math.min(e.clientY + 10, window.innerHeight - 100) + 'px';
+            setTimeout(() => { tooltip.style.display = 'none'; }, 4000);
+          } else {
+            timer[i] = setTimeout(() => { clicks[i] = 0; }, 600);
+          }
+        });
+      });
+    })();
+
     // Konami Code
     (function(){
       const code = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];

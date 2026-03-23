@@ -454,5 +454,31 @@
     Prices subject to change. The Shah's letter is not for sale.
   </footer>
 
+  <script>
+    // Stanisław tooltip — hover his name
+    const tooltip = document.createElement('div');
+    tooltip.style.cssText = 'display:none;position:fixed;background:#3b1a08;color:#f5e6c8;border:2px solid #d4a017;padding:12px 16px;font-family:"Special Elite",serif;font-size:.85rem;max-width:300px;line-height:1.6;z-index:9998;pointer-events:none;box-shadow:4px 4px 0 #d4a017;';
+    tooltip.textContent = 'Stanisław V is 11 years old and entering his senior years. His inspections have become somewhat less rigorous than those of his predecessors. No one has said this to his face.';
+    document.body.appendChild(tooltip);
+
+    document.querySelectorAll('p, td, li').forEach(el => {
+      if (el.textContent.includes('Stanisław V')) {
+        el.innerHTML = el.innerHTML.replace(/Stanisław V/g, '<span class="stan-hover" style="border-bottom:1px dotted #d4a017;cursor:help;">Stanisław V</span>');
+      }
+    });
+
+    document.querySelectorAll('.stan-hover').forEach(el => {
+      el.addEventListener('mouseenter', e => {
+        tooltip.style.display = 'block';
+        tooltip.style.left = Math.min(e.clientX + 12, window.innerWidth - 320) + 'px';
+        tooltip.style.top = Math.min(e.clientY + 12, window.innerHeight - 80) + 'px';
+      });
+      el.addEventListener('mouseleave', () => { tooltip.style.display = 'none'; });
+      el.addEventListener('mousemove', e => {
+        tooltip.style.left = Math.min(e.clientX + 12, window.innerWidth - 320) + 'px';
+        tooltip.style.top = Math.min(e.clientY + 12, window.innerHeight - 80) + 'px';
+      });
+    });
+  </script>
 </body>
 </html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Macomb Sovereign — Waitlist</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Limelight&family=Special+Elite&family=Oswald:wght@300;400;700&display=swap');
+    :root { --avocado:#6b7c2e; --harvest-gold:#d4a017; --burnt-orange:#cc5500; --chocolate:#3b1a08; --cream:#f5e6c8; --mustard:#e3b505; --olive:#808000; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { background-color:var(--chocolate); background-image: repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(212,160,23,.08) 20px,rgba(212,160,23,.08) 40px), repeating-linear-gradient(-45deg,transparent,transparent 20px,rgba(107,124,46,.08) 20px,rgba(107,124,46,.08) 40px); font-family:'Special Elite',serif; color:var(--cream); min-height:100vh; display:flex; flex-direction:column; }
+    header { background:var(--burnt-orange); border-bottom:8px solid var(--harvest-gold); border-top:8px solid var(--harvest-gold); text-align:center; padding:24px 20px 18px; }
+    .logo { font-family:'Alfa Slab One',serif; font-size:clamp(2.2rem,7vw,5rem); color:var(--cream); text-shadow:4px 4px 0 var(--chocolate),7px 7px 0 rgba(0,0,0,.3); letter-spacing:2px; line-height:1.1; }
+    .logo span { color:var(--harvest-gold); }
+    .logo a { text-decoration:none; color:inherit; }
+    .tagline { font-family:'Limelight',cursive; font-size:clamp(.85rem,2.5vw,1.2rem); color:var(--mustard); margin-top:8px; letter-spacing:3px; text-transform:uppercase; }
+    nav { background:var(--avocado); padding:10px 0; text-align:center; border-bottom:4px solid var(--harvest-gold); }
+    nav a { color:var(--cream); text-decoration:none; margin:0 10px; font-family:'Oswald',sans-serif; font-weight:700; font-size:.82rem; letter-spacing:2px; text-transform:uppercase; transition:color .2s; }
+    nav a:hover { color:var(--mustard); }
+    .main { flex:1; display:flex; align-items:center; justify-content:center; padding:60px 20px; }
+    .content { max-width:620px; width:100%; text-align:center; }
+    .crown { font-size:4rem; margin-bottom:16px; }
+    .section-header { font-family:'Alfa Slab One',serif; font-size:clamp(1.8rem,5vw,3rem); color:var(--harvest-gold); text-shadow:4px 4px 0 var(--burnt-orange); letter-spacing:2px; margin-bottom:6px; }
+    .subtitle { font-family:'Limelight',cursive; font-size:1rem; color:var(--mustard); letter-spacing:3px; text-transform:uppercase; margin-bottom:24px; }
+    .divider { color:var(--burnt-orange); font-size:1.5rem; margin:0 0 28px; letter-spacing:6px; }
+    .mystery-box { background:rgba(245,230,200,.05); border:3px solid var(--harvest-gold); padding:28px; margin-bottom:28px; font-size:.95rem; line-height:1.9; text-align:left; }
+    .mystery-box p { margin-bottom:12px; }
+    .mystery-box p:last-child { margin-bottom:0; }
+    .form-wrap { background:rgba(245,230,200,.04); border:2px solid rgba(212,160,23,.4); padding:28px; margin-bottom:20px; }
+    .form-row { margin-bottom:16px; text-align:left; }
+    .form-row label { display:block; font-family:'Oswald',sans-serif; font-weight:700; font-size:.8rem; letter-spacing:2px; text-transform:uppercase; color:var(--mustard); margin-bottom:6px; }
+    .form-row input { width:100%; padding:10px 12px; border:2px solid rgba(212,160,23,.4); background:rgba(245,230,200,.06); font-family:'Special Elite',serif; font-size:.9rem; color:var(--cream); }
+    .submit-btn { background:var(--burnt-orange); color:var(--cream); border:2px solid var(--chocolate); padding:12px 32px; font-family:'Oswald',sans-serif; font-weight:700; font-size:.9rem; letter-spacing:2px; text-transform:uppercase; cursor:pointer; transition:background .2s; width:100%; }
+    .submit-btn:hover { background:var(--chocolate); }
+    .response { display:none; background:var(--avocado); border:3px solid var(--harvest-gold); padding:28px; margin-top:0; }
+    .response.visible { display:block; }
+    .position-number { font-family:'Alfa Slab One',serif; font-size:3rem; color:var(--harvest-gold); text-shadow:3px 3px 0 var(--burnt-orange); margin:10px 0; }
+    .response-text { font-size:.9rem; line-height:1.8; margin-bottom:16px; }
+    .response-sig { font-family:'Oswald',sans-serif; font-size:.75rem; letter-spacing:1px; color:var(--mustard); border-top:1px solid rgba(212,160,23,.3); padding-top:12px; margin-top:12px; }
+    footer { background:var(--chocolate); border-top:8px solid var(--burnt-orange); text-align:center; padding:30px 20px; font-size:.8rem; color:rgba(245,230,200,.5); }
+    footer a { color:var(--burnt-orange); text-decoration:none; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><a href="index.html"><span>Plaid</span> Pants <span>Emporium</span></a></div>
+    <div class="tagline">America's Finest Trousers Since 1971</div>
+  </header>
+  <nav>
+    <a href="index.html">Men's</a>
+    <a href="index.html">Women's</a>
+    <a href="index.html">Leisure Wear</a>
+    <a href="index.html">Sale Room</a>
+    <a href="our-story.html">Our Story</a>
+    <a href="plaid-finder.html">Plaid Finder</a>
+    <a href="hall-of-fame.html">Hall of Fame</a>
+    <a href="complaint-box.html">Complaint Box</a>
+    <a href="#">Contact Us</a>
+  </nav>
+  <div class="main">
+    <div class="content">
+      <div class="crown">♛</div>
+      <div class="section-header">The Macomb Sovereign</div>
+      <div class="subtitle">Coming When It's Ready</div>
+      <div class="divider">◆ ◆ ◆</div>
+      <div class="mystery-box">
+        <p>Harold made three pairs in the winter of 1978. He has never put them on the floor.</p>
+        <p>He says they are not ready.</p>
+        <p>Dolores said they were ready in 1979. Harold said Dolores was correct about many things, but not about this. When pressed, Harold said only that a pant of this nature could not be rushed, and that he would know when the time was right.</p>
+        <p>It has been forty-six years. Harold has not said anything further. Gary once asked. That was 1983. Gary does not ask anymore.</p>
+        <p>If you would like to be notified when the Macomb Sovereign becomes available — if it ever becomes available — please leave your name below.</p>
+        <p>Harold does not know you are waiting. We have not told him. We feel this is the right call.</p>
+      </div>
+
+      <div class="form-wrap" id="form-section">
+        <form id="sovereign-form">
+          <div class="form-row">
+            <label>Your Name</label>
+            <input type="text" required placeholder="First and last name">
+          </div>
+          <div class="form-row">
+            <label>City</label>
+            <input type="text" required placeholder="City, State">
+          </div>
+          <button type="submit" class="submit-btn">Join the Waitlist</button>
+        </form>
+      </div>
+
+      <div class="response" id="sovereign-response">
+        <div style="font-family:'Oswald',sans-serif;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;color:var(--mustard);margin-bottom:8px;">You Are Number</div>
+        <div class="position-number" id="position-number"></div>
+        <div style="font-family:'Oswald',sans-serif;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;color:var(--mustard);margin-bottom:20px;">On The List</div>
+        <div class="response-text">Harold appreciates your patience.<br><br>Harold does not know you are waiting.</div>
+        <div class="response-sig">— Plaid Pants Emporium<br><span style="font-size:.7rem;opacity:.6">Est. 1971 · Macomb, Illinois · The Sovereign Will Be Ready When It Is Ready</span></div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>129 N Randolph St · Macomb, Illinois 61455 · (309) 555-0174<br>
+    <a href="mailto:hello@plaidpantsemporium.com">hello@plaidpantsemporium.com</a></p>
+    <p style="margin-top:10px;font-size:.7rem;opacity:.35">© 1974 Plaid Pants Emporium. All rights reserved. The Sovereign is real. Harold confirmed this in 1981 and has said nothing since.</p>
+  </footer>
+  <script>
+    document.getElementById('sovereign-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const position = Math.floor(Math.random() * (1203 - 847 + 1)) + 847;
+      document.getElementById('position-number').textContent = position.toLocaleString();
+      document.getElementById('form-section').style.display = 'none';
+      document.getElementById('sovereign-response').classList.add('visible');
+    });
+  </script>
+</body>
+</html>
