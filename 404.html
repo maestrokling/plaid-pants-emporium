@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found — Plaid Pants Emporium</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Limelight&family=Special+Elite&family=Oswald:wght@300;400;700&display=swap');
+    :root { --avocado:#6b7c2e; --harvest-gold:#d4a017; --burnt-orange:#cc5500; --chocolate:#3b1a08; --cream:#f5e6c8; --mustard:#e3b505; --olive:#808000; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { background-color:var(--chocolate); background-image: repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(212,160,23,.08) 20px,rgba(212,160,23,.08) 40px), repeating-linear-gradient(-45deg,transparent,transparent 20px,rgba(107,124,46,.08) 20px,rgba(107,124,46,.08) 40px); font-family:'Special Elite',serif; color:var(--cream); min-height:100vh; display:flex; flex-direction:column; }
+    header { background:var(--burnt-orange); border-bottom:8px solid var(--harvest-gold); border-top:8px solid var(--harvest-gold); text-align:center; padding:24px 20px 18px; }
+    .logo { font-family:'Alfa Slab One',serif; font-size:clamp(2.2rem,7vw,5rem); color:var(--cream); text-shadow:4px 4px 0 var(--chocolate),7px 7px 0 rgba(0,0,0,.3); letter-spacing:2px; line-height:1.1; }
+    .logo span { color:var(--harvest-gold); }
+    .logo a { text-decoration:none; color:inherit; }
+    .tagline { font-family:'Limelight',cursive; font-size:clamp(.85rem,2.5vw,1.2rem); color:var(--mustard); margin-top:8px; letter-spacing:3px; text-transform:uppercase; }
+    nav { background:var(--avocado); padding:10px 0; text-align:center; border-bottom:4px solid var(--harvest-gold); }
+    nav a { color:var(--cream); text-decoration:none; margin:0 10px; font-family:'Oswald',sans-serif; font-weight:700; font-size:.82rem; letter-spacing:2px; text-transform:uppercase; transition:color .2s; }
+    nav a:hover { color:var(--mustard); }
+    .main { flex:1; display:flex; align-items:center; justify-content:center; padding:60px 20px; }
+    .error-box { max-width:600px; text-align:center; }
+    .error-number { font-family:'Alfa Slab One',serif; font-size:8rem; color:var(--harvest-gold); text-shadow:6px 6px 0 var(--burnt-orange); line-height:1; margin-bottom:10px; }
+    .error-title { font-family:'Limelight',cursive; font-size:1.8rem; color:var(--mustard); letter-spacing:3px; margin-bottom:30px; }
+    .divider { color:var(--burnt-orange); font-size:1.5rem; margin:0 0 30px; letter-spacing:6px; }
+    .error-body { font-size:1rem; line-height:1.8; color:var(--cream); margin-bottom:30px; }
+    .error-body p { margin-bottom:14px; }
+    .harold-note { background:rgba(245,230,200,.06); border:2px solid var(--harvest-gold); padding:20px 24px; font-style:italic; font-size:.9rem; line-height:1.7; color:rgba(245,230,200,.8); margin-bottom:30px; }
+    .harold-note cite { display:block; margin-top:10px; font-style:normal; font-family:'Oswald',sans-serif; font-size:.75rem; letter-spacing:2px; text-transform:uppercase; color:var(--mustard); }
+    .back-btn { display:inline-block; background:var(--burnt-orange); color:var(--cream); text-decoration:none; padding:12px 32px; font-family:'Oswald',sans-serif; font-weight:700; font-size:.9rem; letter-spacing:2px; text-transform:uppercase; border:2px solid var(--chocolate); transition:background .2s; }
+    .back-btn:hover { background:var(--chocolate); }
+    footer { background:var(--chocolate); border-top:8px solid var(--burnt-orange); text-align:center; padding:30px 20px; font-size:.8rem; color:rgba(245,230,200,.5); }
+    footer a { color:var(--burnt-orange); text-decoration:none; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><a href="index.html"><span>Plaid</span> Pants <span>Emporium</span></a></div>
+    <div class="tagline">America's Finest Trousers Since 1971</div>
+  </header>
+  <nav>
+    <a href="index.html">Men's</a>
+    <a href="index.html">Women's</a>
+    <a href="index.html">Leisure Wear</a>
+    <a href="index.html">Sale Room</a>
+    <a href="our-story.html">Our Story</a>
+    <a href="plaid-finder.html">Plaid Finder</a>
+    <a href="hall-of-fame.html">Hall of Fame</a>
+    <a href="complaint-box.html">Complaint Box</a>
+    <a href="#">Contact Us</a>
+  </nav>
+  <div class="main">
+    <div class="error-box">
+      <div class="error-number">404</div>
+      <div class="error-title">Page Not Found</div>
+      <div class="divider">◆ ◆ ◆</div>
+      <div class="error-body">
+        <p>We looked for this page in every department.</p>
+        <p>Checked the back room. Asked Dolores. Gary looked twice.</p>
+        <p>This page does not exist.</p>
+        <p>The pants do.</p>
+      </div>
+      <div class="harold-note">
+        "In fifty-three years of operation, we have never lost a pant. Pages are a different matter. We cannot account for all of them and we have stopped trying."
+        <cite>— Harold Buczkowski, Founder</cite>
+      </div>
+      <a href="index.html" class="back-btn">Return to the Pants →</a>
+    </div>
+  </div>
+  <footer>
+    <p>129 N Randolph St · Macomb, Illinois 61455 · (309) 555-0174<br>
+    <a href="mailto:hello@plaidpantsemporium.com">hello@plaidpantsemporium.com</a></p>
+    <p style="margin-top:10px;font-size:.7rem;opacity:.35">© 1974 Plaid Pants Emporium. All rights reserved.</p>
+  </footer>
+</body>
+</html>

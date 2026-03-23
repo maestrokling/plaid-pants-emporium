@@ -712,7 +712,38 @@
     </p>
   </footer>
 
+  <!-- Konami Code Easter Egg -->
+  <div id="konami-overlay" style="display:none;position:fixed;inset:0;background:rgba(59,26,8,.97);z-index:9999;display:none;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:40px;">
+    <div style="font-family:'Alfa Slab One',serif;font-size:clamp(1.5rem,5vw,3rem);color:var(--harvest-gold);text-shadow:4px 4px 0 var(--burnt-orange);letter-spacing:2px;margin-bottom:20px;">The Secret Inventory</div>
+    <div style="width:60px;height:4px;background:var(--burnt-orange);margin:0 auto 30px;"></div>
+    <div style="font-family:'Special Elite',serif;font-size:clamp(.9rem,2.5vw,1.1rem);color:var(--cream);line-height:1.9;max-width:560px;margin-bottom:28px;">
+      <p>You have found the secret inventory.</p>
+      <p style="margin-top:12px;">There is no secret inventory.</p>
+      <p style="margin-top:12px;">There are, however, three pairs of the <strong style="color:var(--mustard)">Macomb Sovereign</strong> in the back room. Harold made them in the winter of 1978 and has never put them on the floor. He says they are not ready. Dolores said they have been ready since 1979. Harold said Dolores was correct about many things but not about this.</p>
+      <p style="margin-top:12px;">We are not ready to discuss the Macomb Sovereign.</p>
+    </div>
+    <div style="font-family:'Oswald',sans-serif;font-size:.75rem;letter-spacing:2px;color:var(--mustard);text-transform:uppercase;margin-bottom:28px;">— Harold Buczkowski, Founder</div>
+    <button onclick="document.getElementById('konami-overlay').style.display='none'" style="background:var(--burnt-orange);color:var(--cream);border:2px solid var(--chocolate);padding:10px 28px;font-family:'Oswald',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;">I Understand. I Will Say Nothing.</button>
+  </div>
+
   <script>
+    // Konami Code
+    (function(){
+      const code = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+      let pos = 0;
+      document.addEventListener('keydown', e => {
+        if (e.key === code[pos]) {
+          pos++;
+          if (pos === code.length) {
+            document.getElementById('konami-overlay').style.display = 'flex';
+            pos = 0;
+          }
+        } else {
+          pos = e.key === code[0] ? 1 : 0;
+        }
+      });
+    })();
+
     // Seeded RNG — same seed = same daily starting inventory for all visitors
     function seededRng(seed) {
       let s = seed;
