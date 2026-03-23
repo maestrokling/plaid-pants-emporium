@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Guestbook — Plaid Pants Emporium</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Limelight&family=Special+Elite&family=Oswald:wght@300;400;700&display=swap');
+    :root { --avocado:#6b7c2e; --harvest-gold:#d4a017; --burnt-orange:#cc5500; --chocolate:#3b1a08; --cream:#f5e6c8; --mustard:#e3b505; --olive:#808000; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { background-color:var(--chocolate); background-image: repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(212,160,23,.08) 20px,rgba(212,160,23,.08) 40px), repeating-linear-gradient(-45deg,transparent,transparent 20px,rgba(107,124,46,.08) 20px,rgba(107,124,46,.08) 40px); font-family:'Special Elite',serif; color:var(--cream); }
+    header { background:var(--burnt-orange); border-bottom:8px solid var(--harvest-gold); border-top:8px solid var(--harvest-gold); text-align:center; padding:24px 20px 18px; }
+    .logo { font-family:'Alfa Slab One',serif; font-size:clamp(2.2rem,7vw,5rem); color:var(--cream); text-shadow:4px 4px 0 var(--chocolate),7px 7px 0 rgba(0,0,0,.3); letter-spacing:2px; line-height:1.1; }
+    .logo span { color:var(--harvest-gold); }
+    .logo a { text-decoration:none; color:inherit; }
+    .tagline { font-family:'Limelight',cursive; font-size:clamp(.85rem,2.5vw,1.2rem); color:var(--mustard); margin-top:8px; letter-spacing:3px; text-transform:uppercase; }
+    nav { background:var(--avocado); padding:10px 0; text-align:center; border-bottom:4px solid var(--harvest-gold); }
+    nav a { color:var(--cream); text-decoration:none; margin:0 10px; font-family:'Oswald',sans-serif; font-weight:700; font-size:.82rem; letter-spacing:2px; text-transform:uppercase; transition:color .2s; }
+    nav a:hover, nav a.active { color:var(--mustard); }
+    .container { max-width:780px; margin:0 auto; padding:50px 20px 80px; }
+    .section-header { font-family:'Limelight',cursive; font-size:clamp(1.4rem,4vw,2.2rem); color:var(--harvest-gold); text-align:center; margin:0 0 10px; text-shadow:2px 2px 0 var(--chocolate); letter-spacing:2px; }
+    .subtitle { text-align:center; font-size:.9rem; color:rgba(245,230,200,.65); margin-bottom:30px; font-style:italic; }
+    .divider { text-align:center; color:var(--burnt-orange); font-size:1.5rem; margin:10px 0 30px; letter-spacing:6px; }
+    .sign-form { background:rgba(245,230,200,.04); border:3px solid var(--harvest-gold); padding:28px; margin-bottom:40px; }
+    .sign-form label { display:block; font-family:'Oswald',sans-serif; font-weight:700; font-size:.8rem; letter-spacing:2px; text-transform:uppercase; color:var(--mustard); margin-bottom:8px; }
+    .sign-form input, .sign-form textarea { width:100%; padding:10px 12px; border:2px solid rgba(212,160,23,.4); background:rgba(245,230,200,.06); font-family:'Special Elite',serif; font-size:.9rem; color:var(--cream); margin-bottom:16px; }
+    .sign-form textarea { height:80px; resize:vertical; }
+    .submit-btn { background:var(--burnt-orange); color:var(--cream); border:2px solid var(--chocolate); padding:10px 28px; font-family:'Oswald',sans-serif; font-weight:700; font-size:.85rem; letter-spacing:2px; text-transform:uppercase; cursor:pointer; transition:background .2s; }
+    .submit-btn:hover { background:var(--chocolate); }
+    .response-box { display:none; background:var(--avocado); border:2px solid var(--harvest-gold); padding:16px 20px; margin-top:16px; font-size:.9rem; }
+    .response-box.visible { display:block; }
+    .entry { border-bottom:1px solid rgba(212,160,23,.2); padding:20px 0; display:grid; grid-template-columns:1fr auto; gap:16px; align-items:start; }
+    .entry:last-child { border-bottom:none; }
+    .entry-content {}
+    .entry-name { font-family:'Oswald',sans-serif; font-weight:700; font-size:.85rem; letter-spacing:1px; text-transform:uppercase; color:var(--mustard); margin-bottom:4px; }
+    .entry-location { font-size:.75rem; color:rgba(245,230,200,.45); margin-bottom:8px; }
+    .entry-message { font-size:.9rem; line-height:1.7; color:rgba(245,230,200,.85); }
+    .harold-annotation { background:var(--cream); color:var(--chocolate); padding:8px 12px; font-size:.8rem; font-style:italic; border-left:3px solid var(--burnt-orange); min-width:160px; max-width:220px; }
+    .harold-annotation::before { content:'Harold:'; display:block; font-style:normal; font-family:'Oswald',sans-serif; font-size:.65rem; letter-spacing:2px; text-transform:uppercase; color:var(--burnt-orange); margin-bottom:4px; }
+    @media(max-width:600px){ .entry { grid-template-columns:1fr; } .harold-annotation { max-width:100%; } }
+    footer { background:var(--chocolate); border-top:8px solid var(--burnt-orange); text-align:center; padding:30px 20px; font-size:.8rem; color:rgba(245,230,200,.5); }
+    footer a { color:var(--burnt-orange); text-decoration:none; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><a href="index.html"><span>Plaid</span> Pants <span>Emporium</span></a></div>
+    <div class="tagline">America's Finest Trousers Since 1971</div>
+  </header>
+  <nav>
+    <a href="index.html">Men's</a>
+    <a href="index.html">Women's</a>
+    <a href="index.html">Leisure Wear</a>
+    <a href="index.html">Sale Room</a>
+    <a href="our-story.html">Our Story</a>
+    <a href="plaid-finder.html">Plaid Finder</a>
+    <a href="hall-of-fame.html">Hall of Fame</a>
+    <a href="complaint-box.html">Complaint Box</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+  <div class="container">
+    <h2 class="section-header">The Guestbook</h2>
+    <p class="subtitle">Sign your name. Leave a message. Harold reads each entry and adds a brief annotation. Harold's annotations are final.</p>
+    <div class="divider">◆ ◆ ◆</div>
+
+    <div class="sign-form">
+      <label>Your Name</label>
+      <input type="text" id="gb-name" placeholder="First and last">
+      <label>City</label>
+      <input type="text" id="gb-city" placeholder="City, State">
+      <label>Your Message</label>
+      <textarea id="gb-msg" placeholder="Say what you'd like. Harold will say what he thinks."></textarea>
+      <button class="submit-btn" onclick="signGuestbook()">Sign the Guestbook</button>
+      <div class="response-box" id="gb-response"></div>
+    </div>
+
+    <div id="guestbook-entries">
+
+      <div class="entry">
+        <div class="entry-content">
+          <div class="entry-name">R. Wojcik</div>
+          <div class="entry-location">Schaumburg, IL · March 1974</div>
+          <div class="entry-message">Nice store. Good pants. Harold knew my size before I told him.</div>
+        </div>
+        <div class="harold-annotation">Adequate summary.</div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-content">
+          <div class="entry-name">D. Herschel</div>
+          <div class="entry-location">Toledo, OH · June 1974</div>
+          <div class="entry-message">Best pants I've ever owned. Will return.</div>
+        </div>
+        <div class="harold-annotation">Correct.</div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-content">
+          <div class="entry-name">G. Kowalczyk</div>
+          <div class="entry-location">Green Bay, WI · August 1974</div>
+          <div class="entry-message">My son says I look like a tablecloth. I told him the tablecloth cost $37 and will outlive both of us. He had nothing to say to that.</div>
+        </div>
+        <div class="harold-annotation">The son will come around.</div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-content">
+          <div class="entry-name">F. Baumgartner</div>
+          <div class="entry-location">Fond du Lac, WI · September 1974</div>
+          <div class="entry-message">Ordered the wrong size. Belt fixed it. Still great pants. Highly recommend.</div>
+        </div>
+        <div class="harold-annotation">The belt is underappreciated.</div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-content">
+          <div class="entry-name">W. Prochaska</div>
+          <div class="entry-location">Akron, OH · October 1974</div>
+          <div class="entry-message">This is my fourth visit to this guestbook. I keep buying more pants. I am not stopping.</div>
+        </div>
+        <div class="harold-annotation">We know.</div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-content">
+          <div class="entry-name">T. Riverbend</div>
+          <div class="entry-location">Springfield, IL · November 1974</div>
+          <div class="entry-message">Wore the Avocado Achiever to a job interview. Got the job. Not saying it was the pants. Not NOT saying it either.</div>
+        </div>
+        <div class="harold-annotation">It was the pants.</div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-content">
+          <div class="entry-name">Anonymous</div>
+          <div class="entry-location">Location not provided · December 1974</div>
+          <div class="entry-message">I don't usually leave messages in guestbooks but here I am.</div>
+        </div>
+        <div class="harold-annotation">Here you are.</div>
+      </div>
+
+    </div>
+  </div>
+  <footer>
+    <p>129 N Randolph St · Macomb, Illinois 61455 · (309) 555-0174<br>
+    <a href="mailto:hello@plaidpantsemporium.com">hello@plaidpantsemporium.com</a></p>
+    <p style="margin-top:10px;font-size:.7rem;opacity:.35">© 1974 Plaid Pants Emporium. Harold has annotated every guestbook entry since 1971. He has never skipped one. Gary offered to help once. Harold declined.</p>
+  </footer>
+
+  <script>
+    const annotations = [
+      "Noted.", "Correct.", "Adequate.", "We appreciate this.", "Harold has read this.",
+      "This is on record.", "Fine.", "A reasonable observation.", "Harold agrees.", "We stand behind this."
+    ];
+    let ai = 0;
+    function signGuestbook() {
+      const name = document.getElementById('gb-name').value.trim() || 'Anonymous';
+      const city = document.getElementById('gb-city').value.trim() || 'Location not provided';
+      const msg = document.getElementById('gb-msg').value.trim();
+      if (!msg) { alert('Please leave a message.'); return; }
+
+      const entry = document.createElement('div');
+      entry.className = 'entry';
+      const now = new Date();
+      const month = now.toLocaleString('default',{month:'long'});
+      entry.innerHTML = `
+        <div class="entry-content">
+          <div class="entry-name">${name}</div>
+          <div class="entry-location">${city} · ${month} ${now.getFullYear()}</div>
+          <div class="entry-message">${msg}</div>
+        </div>
+        <div class="harold-annotation">${annotations[ai % annotations.length]}</div>`;
+      ai++;
+      const entries = document.getElementById('guestbook-entries');
+      entries.insertBefore(entry, entries.firstChild);
+
+      const resp = document.getElementById('gb-response');
+      resp.textContent = 'Harold has read your entry and added his annotation.';
+      resp.classList.add('visible');
+      document.getElementById('gb-name').value = '';
+      document.getElementById('gb-city').value = '';
+      document.getElementById('gb-msg').value = '';
+    }
+  </script>
+</body>
+</html>

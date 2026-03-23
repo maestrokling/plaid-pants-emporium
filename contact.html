@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — Plaid Pants Emporium</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Limelight&family=Special+Elite&family=Oswald:wght@300;400;700&display=swap');
+    :root { --avocado:#6b7c2e; --harvest-gold:#d4a017; --burnt-orange:#cc5500; --chocolate:#3b1a08; --cream:#f5e6c8; --mustard:#e3b505; --olive:#808000; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { background-color:var(--chocolate); background-image: repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(212,160,23,.08) 20px,rgba(212,160,23,.08) 40px), repeating-linear-gradient(-45deg,transparent,transparent 20px,rgba(107,124,46,.08) 20px,rgba(107,124,46,.08) 40px); font-family:'Special Elite',serif; color:var(--cream); min-height:100vh; display:flex; flex-direction:column; }
+    header { background:var(--burnt-orange); border-bottom:8px solid var(--harvest-gold); border-top:8px solid var(--harvest-gold); text-align:center; padding:24px 20px 18px; }
+    .logo { font-family:'Alfa Slab One',serif; font-size:clamp(2.2rem,7vw,5rem); color:var(--cream); text-shadow:4px 4px 0 var(--chocolate),7px 7px 0 rgba(0,0,0,.3); letter-spacing:2px; line-height:1.1; }
+    .logo span { color:var(--harvest-gold); }
+    .logo a { text-decoration:none; color:inherit; }
+    .tagline { font-family:'Limelight',cursive; font-size:clamp(.85rem,2.5vw,1.2rem); color:var(--mustard); margin-top:8px; letter-spacing:3px; text-transform:uppercase; }
+    nav { background:var(--avocado); padding:10px 0; text-align:center; border-bottom:4px solid var(--harvest-gold); }
+    nav a { color:var(--cream); text-decoration:none; margin:0 10px; font-family:'Oswald',sans-serif; font-weight:700; font-size:.82rem; letter-spacing:2px; text-transform:uppercase; transition:color .2s; }
+    nav a:hover, nav a.active { color:var(--mustard); }
+    .main { flex:1; display:flex; align-items:center; justify-content:center; padding:40px 20px; }
+    .content { max-width:680px; width:100%; text-align:center; }
+    .hold-badge { display:inline-block; background:var(--burnt-orange); color:var(--cream); font-family:'Oswald',sans-serif; font-size:.7rem; font-weight:700; letter-spacing:3px; text-transform:uppercase; padding:4px 12px; margin-bottom:16px; animation:pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.6} }
+    .section-header { font-family:'Limelight',cursive; font-size:clamp(1.4rem,4vw,2rem); color:var(--harvest-gold); margin:0 0 8px; text-shadow:2px 2px 0 var(--chocolate); letter-spacing:2px; }
+    .hold-msg { font-size:.95rem; line-height:1.9; color:rgba(245,230,200,.8); margin-bottom:10px; }
+    .divider { color:var(--burnt-orange); font-size:1.5rem; margin:16px 0 24px; letter-spacing:6px; }
+    .video-wrap { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border:5px solid var(--harvest-gold); box-shadow:8px 8px 0 var(--harvest-gold); margin-bottom:30px; }
+    .video-wrap iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+    .contact-info { background:rgba(245,230,200,.05); border:3px solid var(--harvest-gold); padding:24px; margin-bottom:24px; text-align:left; }
+    .contact-info h3 { font-family:'Limelight',cursive; color:var(--mustard); font-size:1rem; margin-bottom:14px; letter-spacing:1px; }
+    .contact-row { display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(245,230,200,.08); font-size:.9rem; }
+    .contact-row:last-child { border-bottom:none; }
+    .contact-label { font-family:'Oswald',sans-serif; font-size:.75rem; letter-spacing:2px; text-transform:uppercase; color:var(--mustard); }
+    .wait-note { font-size:.78rem; color:rgba(245,230,200,.4); font-style:italic; margin-top:16px; }
+    footer { background:var(--chocolate); border-top:8px solid var(--burnt-orange); text-align:center; padding:30px 20px; font-size:.8rem; color:rgba(245,230,200,.5); }
+    footer a { color:var(--burnt-orange); text-decoration:none; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><a href="index.html"><span>Plaid</span> Pants <span>Emporium</span></a></div>
+    <div class="tagline">America's Finest Trousers Since 1971</div>
+  </header>
+  <nav>
+    <a href="index.html">Men's</a>
+    <a href="index.html">Women's</a>
+    <a href="index.html">Leisure Wear</a>
+    <a href="index.html">Sale Room</a>
+    <a href="our-story.html">Our Story</a>
+    <a href="plaid-finder.html">Plaid Finder</a>
+    <a href="hall-of-fame.html">Hall of Fame</a>
+    <a href="complaint-box.html">Complaint Box</a>
+    <a href="contact.html" class="active">Contact Us</a>
+  </nav>
+  <div class="main">
+    <div class="content">
+      <div class="hold-badge">● You Are On Hold</div>
+      <h2 class="section-header">Please Hold</h2>
+      <p class="hold-msg">Your call is important to us.<br>
+      Harold will be with you shortly.<br><br>
+      Harold is currently assisting another customer, reviewing the complaint ledger, or discussing the Stanisław situation with Gary.<br><br>
+      Estimated wait time: not specified.</p>
+      <div class="divider">◆ ◆ ◆</div>
+
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/5qm8PH4xAss?autoplay=1&loop=1&playlist=5qm8PH4xAss" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+
+      <div class="contact-info">
+        <h3>When Harold Is Available</h3>
+        <div class="contact-row">
+          <span class="contact-label">Phone</span>
+          <span>(309) 555-0174</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">Address</span>
+          <span>129 N Randolph St, Macomb, Illinois 61455</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">Email</span>
+          <span><a href="mailto:hello@plaidpantsemporium.com" style="color:var(--burnt-orange);">hello@plaidpantsemporium.com</a></span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">Hours</span>
+          <span>Mon–Sat 9:00 AM – 5:30 PM</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">Closed</span>
+          <span>Sundays and most federal holidays</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">Gary</span>
+          <span>Also available during store hours. Gary is faster to respond.</span>
+        </div>
+      </div>
+      <p class="wait-note">Harold does not have voicemail. Harold considers voicemail a fundamentally optimistic technology. He does not share this optimism. Gary does have voicemail. Gary checks it on Tuesdays.</p>
+    </div>
+  </div>
+  <footer>
+    <p>129 N Randolph St · Macomb, Illinois 61455 · (309) 555-0174<br>
+    <a href="mailto:hello@plaidpantsemporium.com">hello@plaidpantsemporium.com</a></p>
+    <p style="margin-top:10px;font-size:.7rem;opacity:.35">© 1974 Plaid Pants Emporium. All rights reserved. Music selected by Gary.</p>
+  </footer>
+</body>
+</html>

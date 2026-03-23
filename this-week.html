@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>This Week at the Emporium — Plaid Pants Emporium</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Limelight&family=Special+Elite&family=Oswald:wght@300;400;700&display=swap');
+    :root { --avocado:#6b7c2e; --harvest-gold:#d4a017; --burnt-orange:#cc5500; --chocolate:#3b1a08; --cream:#f5e6c8; --mustard:#e3b505; --olive:#808000; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { background-color:var(--chocolate); background-image: repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(212,160,23,.08) 20px,rgba(212,160,23,.08) 40px), repeating-linear-gradient(-45deg,transparent,transparent 20px,rgba(107,124,46,.08) 20px,rgba(107,124,46,.08) 40px); font-family:'Special Elite',serif; color:var(--cream); }
+    header { background:var(--burnt-orange); border-bottom:8px solid var(--harvest-gold); border-top:8px solid var(--harvest-gold); text-align:center; padding:24px 20px 18px; }
+    .logo { font-family:'Alfa Slab One',serif; font-size:clamp(2.2rem,7vw,5rem); color:var(--cream); text-shadow:4px 4px 0 var(--chocolate),7px 7px 0 rgba(0,0,0,.3); letter-spacing:2px; line-height:1.1; }
+    .logo span { color:var(--harvest-gold); }
+    .logo a { text-decoration:none; color:inherit; }
+    .tagline { font-family:'Limelight',cursive; font-size:clamp(.85rem,2.5vw,1.2rem); color:var(--mustard); margin-top:8px; letter-spacing:3px; text-transform:uppercase; }
+    nav { background:var(--avocado); padding:10px 0; text-align:center; border-bottom:4px solid var(--harvest-gold); }
+    nav a { color:var(--cream); text-decoration:none; margin:0 10px; font-family:'Oswald',sans-serif; font-weight:700; font-size:.82rem; letter-spacing:2px; text-transform:uppercase; transition:color .2s; }
+    nav a:hover, nav a.active { color:var(--mustard); }
+    .container { max-width:760px; margin:0 auto; padding:50px 20px 80px; }
+    .bulletin-header { background:var(--cream); color:var(--chocolate); border:5px solid var(--burnt-orange); padding:24px; text-align:center; margin-bottom:32px; position:relative; }
+    .bulletin-title { font-family:'Alfa Slab One',serif; font-size:clamp(1.4rem,4vw,2.2rem); color:var(--chocolate); letter-spacing:2px; }
+    .bulletin-sub { font-family:'Oswald',sans-serif; font-size:.8rem; letter-spacing:3px; text-transform:uppercase; color:var(--burnt-orange); margin-top:6px; }
+    .bulletin-date { font-size:.8rem; color:rgba(59,26,8,.6); margin-top:4px; }
+    .thumbtack { position:absolute; top:-8px; left:50%; transform:translateX(-50%); width:18px; height:18px; background:var(--burnt-orange); border-radius:50%; border:3px solid var(--chocolate); }
+    .divider { text-align:center; color:var(--burnt-orange); font-size:1.5rem; margin:10px 0 30px; letter-spacing:6px; }
+    .bulletin-item { background:rgba(245,230,200,.05); border-left:4px solid var(--harvest-gold); padding:20px 24px; margin-bottom:20px; }
+    .item-tag { font-family:'Oswald',sans-serif; font-size:.7rem; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--burnt-orange); margin-bottom:8px; display:inline-block; border:1px solid var(--burnt-orange); padding:2px 8px; }
+    .item-body { font-size:.92rem; line-height:1.8; }
+    .item-body p { margin-bottom:10px; }
+    .item-body p:last-child { margin-bottom:0; }
+    .harold-aside { font-style:italic; font-size:.82rem; color:rgba(245,230,200,.55); border-top:1px solid rgba(212,160,23,.2); margin-top:12px; padding-top:10px; }
+    .harold-aside::before { content:'Harold adds: '; font-style:normal; color:var(--mustard); font-family:'Oswald',sans-serif; font-size:.72rem; letter-spacing:1px; text-transform:uppercase; }
+    footer { background:var(--chocolate); border-top:8px solid var(--burnt-orange); text-align:center; padding:30px 20px; font-size:.8rem; color:rgba(245,230,200,.5); }
+    footer a { color:var(--burnt-orange); text-decoration:none; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><a href="index.html"><span>Plaid</span> Pants <span>Emporium</span></a></div>
+    <div class="tagline">America's Finest Trousers Since 1971</div>
+  </header>
+  <nav>
+    <a href="index.html">Men's</a>
+    <a href="index.html">Women's</a>
+    <a href="index.html">Leisure Wear</a>
+    <a href="index.html">Sale Room</a>
+    <a href="our-story.html">Our Story</a>
+    <a href="plaid-finder.html">Plaid Finder</a>
+    <a href="hall-of-fame.html">Hall of Fame</a>
+    <a href="complaint-box.html">Complaint Box</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+  <div class="container">
+    <div class="bulletin-header">
+      <div class="thumbtack"></div>
+      <div class="bulletin-title">This Week at the Emporium</div>
+      <div class="bulletin-sub">Plaid Pants Emporium · Macomb, Illinois</div>
+      <div class="bulletin-date" id="bulletin-date"></div>
+    </div>
+    <div class="divider">◆ ◆ ◆</div>
+
+    <div class="bulletin-item">
+      <div class="item-tag">Staff</div>
+      <div class="item-body">
+        <p>Gary will be out Wednesday afternoon for a dental appointment. Harold will cover the floor. Harold has covered the floor before. Harold prefers covering the floor to most other activities, which Gary knows and which is why Gary scheduled the appointment for Wednesday.</p>
+        <div class="harold-aside">Gary's teeth are his own business. The floor will be covered.</div>
+      </div>
+    </div>
+
+    <div class="bulletin-item">
+      <div class="item-tag">Inventory</div>
+      <div class="item-body">
+        <p>The Macomb Mahogany has returned to stock after a brief absence. Fourteen customers inquired about it during the period it was unavailable. Harold noted each inquiry. He considers this a good sign about the Mahogany and a useful data point about customer patience, which he found, on balance, adequate.</p>
+        <div class="harold-aside">Fourteen is a meaningful number. We will reorder accordingly.</div>
+      </div>
+    </div>
+
+    <div class="bulletin-item">
+      <div class="item-tag">Parking</div>
+      <div class="item-body">
+        <p>Parking on Randolph Street remains a situation. The construction on the north end of the block is, according to the city, approximately three weeks from completion. It has been approximately three weeks from completion since April. Harold has no additional information. Gary drove around the block twice on Tuesday and found a spot on Lincoln. He was late opening the register by four minutes. Harold noted this.</p>
+        <div class="harold-aside">The spot on Lincoln is available before 9:15 most mornings. This is not a guarantee.</div>
+      </div>
+    </div>
+
+    <div class="bulletin-item">
+      <div class="item-tag">Coming Soon</div>
+      <div class="item-body">
+        <p>The sidewalk sale previously announced for the third Saturday of this month will not be taking place. Harold has reconsidered. Harold reconsidered approximately thirty seconds after announcing it. The announcement was Gary's idea. Harold does not hold this against Gary. Gary had good intentions. The sidewalk sale is not happening.</p>
+        <div class="harold-aside">We do not do sidewalk sales. We have discussed this.</div>
+      </div>
+    </div>
+
+    <div class="bulletin-item">
+      <div class="item-tag">Retirement</div>
+      <div class="item-body">
+        <p>Gary has asked us to include a note that he is not retiring. This is in response to a rumor circulating among regular customers that Gary is retiring. Gary is not retiring. Gary has no plans to retire. Gary would like to be clear about this. Harold has no comment on Gary's retirement status. Harold says Gary's employment situation is between Gary and the Emporium and declines to elaborate.</p>
+        <div class="harold-aside">Gary is not retiring at this time.</div>
+      </div>
+    </div>
+
+    <div class="bulletin-item">
+      <div class="item-tag">Stanisław</div>
+      <div class="item-body">
+        <p>Stanisław V completed his weekly inspection of the new shipment on Tuesday. The shipment passed. Stanisław V's inspection was, by his own standards, brief — approximately four minutes compared to his historical average of eleven. This has been noted. We are monitoring the situation. Stanisław V appears healthy and in good spirits. His reduced inspection time may reflect efficiency rather than diminished rigor. We are choosing to believe this.</p>
+        <div class="harold-aside">Stanisław V is fine. The shipment passed. We move forward.</div>
+      </div>
+    </div>
+
+    <div class="bulletin-item">
+      <div class="item-tag">Harold's Note</div>
+      <div class="item-body">
+        <p>Harold would like to remind customers that store hours are Monday through Saturday, 9:00 AM to 5:30 PM. The store is closed Sundays and most federal holidays. Harold observes Columbus Day. Harold does not wish to explain why he observes Columbus Day. He simply does. Gary does not observe Columbus Day. This has never been a problem because Gary is not the one who sets the hours.</p>
+      </div>
+    </div>
+
+  </div>
+  <footer>
+    <p>129 N Randolph St · Macomb, Illinois 61455 · (309) 555-0174<br>
+    <a href="mailto:hello@plaidpantsemporium.com">hello@plaidpantsemporium.com</a></p>
+    <p style="margin-top:10px;font-size:.7rem;opacity:.35">© 1974 Plaid Pants Emporium. This bulletin is updated weekly. "Weekly" is aspirational. Harold updates it when he has something to say.</p>
+  </footer>
+  <script>
+    const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    const d = new Date();
+    document.getElementById('bulletin-date').textContent = `Week of ${months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`;
+  </script>
+</body>
+</html>

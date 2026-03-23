@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ask Harold — Plaid Pants Emporium</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Limelight&family=Special+Elite&family=Oswald:wght@300;400;700&display=swap');
+    :root { --avocado:#6b7c2e; --harvest-gold:#d4a017; --burnt-orange:#cc5500; --chocolate:#3b1a08; --cream:#f5e6c8; --mustard:#e3b505; --olive:#808000; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { background-color:var(--chocolate); background-image: repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(212,160,23,.08) 20px,rgba(212,160,23,.08) 40px), repeating-linear-gradient(-45deg,transparent,transparent 20px,rgba(107,124,46,.08) 20px,rgba(107,124,46,.08) 40px); font-family:'Special Elite',serif; color:var(--cream); }
+    header { background:var(--burnt-orange); border-bottom:8px solid var(--harvest-gold); border-top:8px solid var(--harvest-gold); text-align:center; padding:24px 20px 18px; }
+    .logo { font-family:'Alfa Slab One',serif; font-size:clamp(2.2rem,7vw,5rem); color:var(--cream); text-shadow:4px 4px 0 var(--chocolate),7px 7px 0 rgba(0,0,0,.3); letter-spacing:2px; line-height:1.1; }
+    .logo span { color:var(--harvest-gold); }
+    .logo a { text-decoration:none; color:inherit; }
+    .tagline { font-family:'Limelight',cursive; font-size:clamp(.85rem,2.5vw,1.2rem); color:var(--mustard); margin-top:8px; letter-spacing:3px; text-transform:uppercase; }
+    nav { background:var(--avocado); padding:10px 0; text-align:center; border-bottom:4px solid var(--harvest-gold); }
+    nav a { color:var(--cream); text-decoration:none; margin:0 10px; font-family:'Oswald',sans-serif; font-weight:700; font-size:.82rem; letter-spacing:2px; text-transform:uppercase; transition:color .2s; }
+    nav a:hover, nav a.active { color:var(--mustard); }
+    .container { max-width:800px; margin:0 auto; padding:50px 20px 80px; }
+    .section-header { font-family:'Limelight',cursive; font-size:clamp(1.4rem,4vw,2.2rem); color:var(--harvest-gold); text-align:center; margin:0 0 10px; text-shadow:2px 2px 0 var(--chocolate); letter-spacing:2px; }
+    .subtitle { text-align:center; font-size:.9rem; color:rgba(245,230,200,.65); margin-bottom:30px; font-style:italic; }
+    .divider { text-align:center; color:var(--burnt-orange); font-size:1.5rem; margin:10px 0 30px; letter-spacing:6px; }
+    .ask-form { background:rgba(245,230,200,.04); border:3px solid var(--harvest-gold); padding:28px; margin-bottom:40px; }
+    .ask-form label { display:block; font-family:'Oswald',sans-serif; font-weight:700; font-size:.8rem; letter-spacing:2px; text-transform:uppercase; color:var(--mustard); margin-bottom:8px; }
+    .ask-form input, .ask-form textarea { width:100%; padding:10px 12px; border:2px solid rgba(212,160,23,.4); background:rgba(245,230,200,.06); font-family:'Special Elite',serif; font-size:.9rem; color:var(--cream); margin-bottom:16px; }
+    .ask-form textarea { height:90px; resize:vertical; }
+    .submit-btn { background:var(--burnt-orange); color:var(--cream); border:2px solid var(--chocolate); padding:10px 28px; font-family:'Oswald',sans-serif; font-weight:700; font-size:.85rem; letter-spacing:2px; text-transform:uppercase; cursor:pointer; transition:background .2s; }
+    .submit-btn:hover { background:var(--chocolate); }
+    .response-box { display:none; background:var(--avocado); border:3px solid var(--harvest-gold); padding:24px; margin-top:20px; }
+    .response-box.visible { display:block; }
+    .response-q { font-style:italic; font-size:.85rem; color:rgba(245,230,200,.6); margin-bottom:12px; border-left:3px solid var(--burnt-orange); padding-left:12px; }
+    .response-a { font-size:.95rem; line-height:1.8; margin-bottom:14px; }
+    .response-sig { font-family:'Oswald',sans-serif; font-size:.75rem; letter-spacing:1px; color:var(--mustard); border-top:1px solid rgba(212,160,23,.3); padding-top:10px; margin-top:10px; }
+    .archive-section h3 { font-family:'Limelight',cursive; font-size:1.3rem; color:var(--harvest-gold); margin-bottom:24px; }
+    .qa-item { border-left:4px solid var(--burnt-orange); padding:20px 20px 20px 24px; margin-bottom:28px; background:rgba(245,230,200,.03); }
+    .qa-question { font-style:italic; font-size:.9rem; color:rgba(245,230,200,.7); margin-bottom:12px; }
+    .qa-question strong { font-style:normal; font-family:'Oswald',sans-serif; font-size:.75rem; letter-spacing:1px; text-transform:uppercase; color:var(--mustard); display:block; margin-bottom:4px; }
+    .qa-answer { font-size:.92rem; line-height:1.8; }
+    .qa-sig { font-family:'Oswald',sans-serif; font-size:.72rem; letter-spacing:1px; color:rgba(212,160,23,.6); margin-top:10px; }
+    footer { background:var(--chocolate); border-top:8px solid var(--burnt-orange); text-align:center; padding:30px 20px; font-size:.8rem; color:rgba(245,230,200,.5); }
+    footer a { color:var(--burnt-orange); text-decoration:none; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><a href="index.html"><span>Plaid</span> Pants <span>Emporium</span></a></div>
+    <div class="tagline">America's Finest Trousers Since 1971</div>
+  </header>
+  <nav>
+    <a href="index.html">Men's</a>
+    <a href="index.html">Women's</a>
+    <a href="index.html">Leisure Wear</a>
+    <a href="index.html">Sale Room</a>
+    <a href="our-story.html">Our Story</a>
+    <a href="plaid-finder.html">Plaid Finder</a>
+    <a href="hall-of-fame.html">Hall of Fame</a>
+    <a href="complaint-box.html">Complaint Box</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+  <div class="container">
+    <h2 class="section-header">Ask Harold</h2>
+    <p class="subtitle">Harold answers questions about life, trousers, and the nature of commitment. Primarily trousers.</p>
+    <div class="divider">◆ ◆ ◆</div>
+
+    <div class="ask-form">
+      <label>Your Name</label>
+      <input type="text" id="ask-name" placeholder="First name is fine">
+      <label>Your Question</label>
+      <textarea id="ask-q" placeholder="Harold reads every question. Harold responds to all of them eventually. 'Eventually' is doing a lot of work in that sentence."></textarea>
+      <button class="submit-btn" onclick="submitQuestion()">Submit to Harold</button>
+      <div class="response-box" id="ask-response">
+        <div class="response-q" id="ask-response-q"></div>
+        <div class="response-a" id="ask-response-a"></div>
+        <div class="response-sig">— Harold Buczkowski, Founder</div>
+      </div>
+    </div>
+
+    <div class="archive-section">
+      <h3>Letters Harold Has Answered</h3>
+
+      <div class="qa-item">
+        <div class="qa-question"><strong>D. Wojcik — Schaumburg, IL</strong>"My neighbor borrowed my lawnmower in June and still hasn't returned it. It is now October. What should I do?"</div>
+        <div class="qa-answer">A man who will not return what he borrowed is a man of poor character. Whether this extends to his trouser choices I cannot say, but in my experience there is a correlation. I would not lend him anything further. I would also, at your next opportunity, look at what he's wearing. The answer will tell you something.</div>
+        <div class="qa-sig">— Harold</div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-question"><strong>R. Przybylski — Joliet, IL</strong>"I have been offered a promotion that would require me to move to Phoenix, Arizona. My wife is opposed. How do I decide?"</div>
+        <div class="qa-answer">I have never been to Phoenix. I understand it is warm. A warm climate is, in my view, not inherently hostile to a good trouser — permanent press holds up in heat — but it does present challenges to the fuller leg, which can feel confining in high temperatures. I would think carefully about what you are willing to give up. The promotion is not the only thing on the table. Your wife has also noticed this, which is why she is opposed. I would listen to her.</div>
+        <div class="qa-sig">— Harold</div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-question"><strong>T. Heikkinen — Marquette, MI</strong>"Is it appropriate to wear plaid trousers to a funeral?"</div>
+        <div class="qa-answer">I have been asked this question fourteen times. The answer is: it depends on the deceased. A man who lived fully and without apology would, I believe, want to be seen off by people dressed accordingly. A subdued pant — the Burgundy Big Deal, for instance, or the Forest Glen Special — honors the occasion without abandoning the commitment. Avoid the Midnight Maverick at a funeral unless you are very sure of the room. I have made this mistake. I do not regret it. But I am Harold Buczkowski and I understand the Midnight Maverick completely.</div>
+        <div class="qa-sig">— Harold</div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-question"><strong>G. Kowalczyk — Green Bay, WI</strong>"My son says I dress like it's still 1974. He means it as an insult. Is it?"</div>
+        <div class="qa-answer">No. 1974 was a fine year for trousers. It was also a difficult year for the country, but the trousers were not responsible for that and should not be punished for it. Your son is young. He will develop opinions and then revise them, as all young men do. The pant will still be there when he comes around. Permanent press. It waits.</div>
+        <div class="qa-sig">— Harold</div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-question"><strong>W. Baumgartner — Fond du Lac, WI</strong>"I am thinking of starting a small business. Any advice?"</div>
+        <div class="qa-answer">Know what you sell. Know why it is good. Do not hold a sale unless you intend it as a permanent price change. Hire one person who tells you the truth even when it is inconvenient — this person is worth more than five agreeable ones. Keep a ledger. Write things down. Do not borrow money from your brother-in-law unless you are prepared for the conversation at Thanksgiving to be about money for the next several years. Also: dress well. A man who takes his own business seriously dresses as if he takes his own business seriously. This is not vanity. It is information.</div>
+        <div class="qa-sig">— Harold</div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-question"><strong>F. Szymanski — Rockford, IL</strong>"What do you think about the direction the country is heading?"</div>
+        <div class="qa-answer">I think about trousers. I find this more productive.</div>
+        <div class="qa-sig">— Harold</div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-question"><strong>C. Nowakowski — Decatur, IL</strong>"My doctor says I need to lose weight. I don't want to lose weight. Who is right?"</div>
+        <div class="qa-answer">Your doctor is probably right about the health question. You are probably right that you don't want to. These are not mutually exclusive positions. In the meantime: we carry up to a 44 waist in most styles, and our Husky sizing runs to a 48. A man should dress for the body he has, not the body he intends to have someday. Come see us. We'll fit you correctly.</div>
+        <div class="qa-sig">— Harold</div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-question"><strong>B. Lichtenstein — Champaign, IL</strong>"Is the customer always right?"</div>
+        <div class="qa-answer">No. The customer is frequently right about what they want. They are less frequently right about what will fit. These are different things and I treat them differently. When a man tells me he wears a 34, I believe that he believes it. Whether the 34 will close is a separate question, and I am the one who knows the answer. I am always honest about the answer. Most customers appreciate this. A few do not come back. The ones who don't come back were not the right customers. This is fine.</div>
+        <div class="qa-sig">— Harold</div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>129 N Randolph St · Macomb, Illinois 61455 · (309) 555-0174<br>
+    <a href="mailto:hello@plaidpantsemporium.com">hello@plaidpantsemporium.com</a></p>
+    <p style="margin-top:10px;font-size:.7rem;opacity:.35">© 1974 Plaid Pants Emporium. Harold has answered every question submitted since 1971. Response time varies. Harold is not on a schedule.</p>
+  </footer>
+
+  <script>
+    const responses = [
+      "That is a reasonable question and I have thought about it. Here is what I have found: most problems, when examined closely, have a simpler answer than the problem suggests. Whether that answer involves trousers depends on the problem. Frequently it does not. Occasionally it does. I have learned to check.",
+      "I appreciate you writing. I will say this: the things that keep people up at night are almost never the things they say are keeping them up at night. Whatever you are actually asking about — and I suspect I know — the answer begins with deciding what you actually want. Not what you think you should want. What you want. This is harder than it sounds. Most people never do it. I recommend doing it.",
+      "Harold has read your question. Harold says: a man who asks this question is a man who already knows the answer and is looking for permission. You have it. Go ahead.",
+      "This is not a trouser question. I will answer it anyway. The short answer is: yes, if you are asking whether you should. The long answer is the same, with more words around it.",
+      "In fifty-three years I have been asked many things. This is among the more interesting ones. I don't have a complete answer for you. I have most of one. The part I don't have — you'll have to find that yourself. No one can find it for you. Not even Harold."
+    ];
+    let ri = 0;
+    function submitQuestion() {
+      const name = document.getElementById('ask-name').value.trim() || 'Friend';
+      const q = document.getElementById('ask-q').value.trim();
+      if (!q) { alert('Harold requires a question.'); return; }
+      document.getElementById('ask-response-q').textContent = `"${q}" — ${name}`;
+      document.getElementById('ask-response-a').textContent = responses[ri % responses.length];
+      ri++;
+      document.getElementById('ask-response').classList.add('visible');
+      document.getElementById('ask-q').value = '';
+    }
+  </script>
+</body>
+</html>

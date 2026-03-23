@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harold's Annual Letter — Plaid Pants Emporium</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Limelight&family=Special+Elite&family=Oswald:wght@300;400;700&display=swap');
+    :root { --avocado:#6b7c2e; --harvest-gold:#d4a017; --burnt-orange:#cc5500; --chocolate:#3b1a08; --cream:#f5e6c8; --mustard:#e3b505; --olive:#808000; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { background-color:var(--chocolate); background-image: repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(212,160,23,.08) 20px,rgba(212,160,23,.08) 40px), repeating-linear-gradient(-45deg,transparent,transparent 20px,rgba(107,124,46,.08) 20px,rgba(107,124,46,.08) 40px); font-family:'Special Elite',serif; color:var(--cream); }
+    header { background:var(--burnt-orange); border-bottom:8px solid var(--harvest-gold); border-top:8px solid var(--harvest-gold); text-align:center; padding:24px 20px 18px; }
+    .logo { font-family:'Alfa Slab One',serif; font-size:clamp(2.2rem,7vw,5rem); color:var(--cream); text-shadow:4px 4px 0 var(--chocolate),7px 7px 0 rgba(0,0,0,.3); letter-spacing:2px; line-height:1.1; }
+    .logo span { color:var(--harvest-gold); }
+    .logo a { text-decoration:none; color:inherit; }
+    .tagline { font-family:'Limelight',cursive; font-size:clamp(.85rem,2.5vw,1.2rem); color:var(--mustard); margin-top:8px; letter-spacing:3px; text-transform:uppercase; }
+    nav { background:var(--avocado); padding:10px 0; text-align:center; border-bottom:4px solid var(--harvest-gold); }
+    nav a { color:var(--cream); text-decoration:none; margin:0 10px; font-family:'Oswald',sans-serif; font-weight:700; font-size:.82rem; letter-spacing:2px; text-transform:uppercase; transition:color .2s; }
+    nav a:hover { color:var(--mustard); }
+    .container { max-width:760px; margin:0 auto; padding:50px 20px 80px; }
+    .letter-header { text-align:center; margin-bottom:40px; border:5px double var(--harvest-gold); padding:30px; }
+    .letter-title { font-family:'Limelight',cursive; font-size:clamp(1.2rem,3vw,1.8rem); color:var(--harvest-gold); letter-spacing:2px; margin-bottom:8px; }
+    .letter-subtitle { font-family:'Oswald',sans-serif; font-size:.85rem; letter-spacing:3px; text-transform:uppercase; color:var(--mustard); margin-bottom:6px; }
+    .letter-date { font-size:.85rem; color:rgba(245,230,200,.6); }
+    .divider { text-align:center; color:var(--burnt-orange); font-size:1.5rem; margin:30px 0; letter-spacing:6px; }
+    .letter-body { font-size:.95rem; line-height:1.9; }
+    .letter-body p { margin-bottom:18px; }
+    .letter-body h3 { font-family:'Limelight',cursive; font-size:1.1rem; color:var(--harvest-gold); margin:32px 0 14px; letter-spacing:1px; }
+    .pullquote { border-left:4px solid var(--burnt-orange); padding:14px 20px; margin:28px 0; font-style:italic; font-size:1rem; color:var(--mustard); background:rgba(245,230,200,.04); }
+    .stat-box { background:rgba(245,230,200,.05); border:2px solid var(--harvest-gold); padding:20px 24px; margin:28px 0; }
+    .stat-box table { width:100%; border-collapse:collapse; font-size:.9rem; }
+    .stat-box th { font-family:'Oswald',sans-serif; font-size:.75rem; letter-spacing:2px; text-transform:uppercase; color:var(--mustard); text-align:left; padding:6px 0; border-bottom:1px solid rgba(212,160,23,.3); }
+    .stat-box td { padding:8px 0; border-bottom:1px solid rgba(245,230,200,.08); color:var(--cream); }
+    .stat-box td:last-child { text-align:right; color:var(--harvest-gold); font-family:'Oswald',sans-serif; font-weight:700; }
+    .signature { margin-top:40px; font-style:italic; font-size:.95rem; }
+    .signature .sig-name { font-family:'Alfa Slab One',serif; font-size:1.4rem; color:var(--harvest-gold); display:block; margin:8px 0 4px; }
+    .signature .sig-title { font-family:'Oswald',sans-serif; font-size:.75rem; letter-spacing:2px; text-transform:uppercase; color:rgba(245,230,200,.6); }
+    .footnote { margin-top:40px; padding-top:20px; border-top:1px solid rgba(212,160,23,.3); font-size:.78rem; color:rgba(245,230,200,.45); line-height:1.7; }
+    footer { background:var(--chocolate); border-top:8px solid var(--burnt-orange); text-align:center; padding:30px 20px; font-size:.8rem; color:rgba(245,230,200,.5); }
+    footer a { color:var(--burnt-orange); text-decoration:none; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><a href="index.html"><span>Plaid</span> Pants <span>Emporium</span></a></div>
+    <div class="tagline">America's Finest Trousers Since 1971</div>
+  </header>
+  <nav>
+    <a href="index.html">Men's</a>
+    <a href="index.html">Women's</a>
+    <a href="index.html">Leisure Wear</a>
+    <a href="index.html">Sale Room</a>
+    <a href="our-story.html">Our Story</a>
+    <a href="plaid-finder.html">Plaid Finder</a>
+    <a href="hall-of-fame.html">Hall of Fame</a>
+    <a href="complaint-box.html">Complaint Box</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+  <div class="container">
+    <div class="letter-header">
+      <div class="letter-title">Harold's Annual Letter to Customers</div>
+      <div class="letter-subtitle">Plaid Pants Emporium — Macomb, Illinois</div>
+      <div class="letter-date">Year-End 1974 · Third Year of Operation</div>
+    </div>
+
+    <div class="letter-body">
+      <p>To our customers:</p>
+
+      <p>It is my practice, at the close of each calendar year, to sit down and account for what has happened. This is the third time I have done so. It is getting easier. The first letter I wrote, in December of 1971, covered approximately four months of operation and ran to eleven pages. Dolores said it was too long. I cut it to seven. You are holding the result of that discipline now.</p>
+
+      <p>This will be brief. I do not believe in wasting a customer's time. I also do not believe in denim, aggressive markdowns, or the word "slacks," but those are separate matters.</p>
+
+      <h3>On the Year</h3>
+
+      <p>1974 was, by most measures, a difficult year for the United States. There was the matter of the President. There was the ongoing petroleum situation. There was a general atmosphere of uncertainty that I noticed primarily in the form of customers standing in the doorway for a longer time than usual before coming in.</p>
+
+      <p>They came in eventually. They always do.</p>
+
+      <p>Sales were up eleven percent over 1973, which was itself up fourteen percent over 1972. I attribute this to three factors: the quality of the merchandise, the trust of the customer, and the fact that Dolores reorganized the display floor in February in a way I initially found troubling and later found correct. I told her it was correct. She said she knew.</p>
+
+      <div class="stat-box">
+        <table>
+          <thead><tr><th>Metric</th><th>1974</th></tr></thead>
+          <tbody>
+            <tr><td>Pairs sold</td><td>1,847</td></tr>
+            <tr><td>Best-selling pant</td><td>The Macomb Powerbroker</td></tr>
+            <tr><td>Complaints received</td><td>23</td></tr>
+            <tr><td>Complaints acted upon</td><td>0</td></tr>
+            <tr><td>Customers who returned after complaining</td><td>19</td></tr>
+            <tr><td>Years Gary has worked here</td><td>1</td></tr>
+            <tr><td>Times Gary has suggested a sale</td><td>4</td></tr>
+            <tr><td>Sales held</td><td>0</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>On the Competition</h3>
+
+      <p>I am aware that there are other establishments in Western Illinois selling trousers. I am also aware that several of these establishments have adopted what the trade publications are calling a "lifestyle approach" to menswear, which appears to mean displaying pants near tennis racquets and photographs of men standing on boats.</p>
+
+      <div class="pullquote">"A pant does not need a boat. A pant needs a man who understands it."</div>
+
+      <p>We will not be adopting the lifestyle approach. If a customer wishes to stand on a boat, that is between him and the boat. We will outfit him correctly for the occasion and wish him well.</p>
+
+      <h3>On Denim</h3>
+
+      <p>I want to address denim directly because several customers have asked whether we will be stocking it. The answer is no. The answer will remain no.</p>
+
+      <p>Denim is a workwear fabric that has been repositioned as leisure clothing through an aggressive and, I believe, coordinated marketing effort. I have nothing against workwear. I have something against the premise that a workwear fabric, by virtue of being worn by young people in California, has become appropriate for all occasions.</p>
+
+      <p>It has not. We will not carry it. If you need denim, I can direct you to several fine establishments that have made their peace with it. We have not, and we do not intend to.</p>
+
+      <h3>On Polyester</h3>
+
+      <p>I want to say something about polyester because I am aware that certain voices in the fashion press have begun to describe it as a fabric in decline. These voices are wrong.</p>
+
+      <p>Double-knit polyester is permanent press. It does not wrinkle. It does not shrink. It holds its color across hundreds of washings. It is, in the language of engineering, a superior material for its application. The fact that it has become associated in certain circles with a particular aesthetic does not change its material properties.</p>
+
+      <p>I am not concerned about the fashion press. The fashion press has been wrong before. It will be wrong again. The double-knit polyester trouser will outlast the criticism, as it outlasts most things, including the men who wear it.</p>
+
+      <h3>On Gary</h3>
+
+      <p>Gary Mielczarek joined the Emporium in January of this year. He is twenty-six years old. He has strong opinions about inventory rotation that I initially found presumptuous and later found useful. He suggested a sale four times. I said no four times. He has stopped suggesting. I consider this growth.</p>
+
+      <p>Gary is reliable. He is on time. He knows the stock. He still does not know what to say when a customer asks about the fit across the seat, but this will come. It comes to all of them eventually.</p>
+
+      <h3>On What's Next</h3>
+
+      <p>In 1975, I intend to introduce two new colorways and expand the Husky sizing range to include a 46 waist, which three separate customers have requested in writing over the past eighteen months. I do not make promises in this letter. I note intentions. The 46 waist is an intention.</p>
+
+      <p>I am also considering whether to extend our hours on Friday evenings to accommodate customers who work until five and find our current closing time of five-thirty insufficient. I have not decided. Dolores has opinions. I am listening.</p>
+
+      <p>Beyond that, I intend to continue doing what we have done since October of 1971: stocking the finest plaid trousers available, selling them at a fair price, and standing behind every seam without reservation.</p>
+
+      <p>That is the whole business. I don't know why it works as well as it does. It just does.</p>
+
+      <div class="divider">◆ ◆ ◆</div>
+
+      <div class="signature">
+        With appreciation for your continued patronage,
+        <span class="sig-name">Harold Buczkowski</span>
+        <span class="sig-title">Founder & President · Plaid Pants Emporium · Est. 1971</span>
+      </div>
+
+      <div class="footnote">
+        <p><em>This letter was written by Harold in longhand in December 1974 and distributed to 312 customers on our mailing list at that time. It was typed by Dolores. Harold dictated it to her directly. Dolores made two corrections to the grammar without telling Harold. Harold noticed one of them. He did not mention it. We are including this letter in our permanent archive because Harold asked us to and because we think it is correct to do so.</em></p>
+        <p><em>All figures are accurate to the best of our recollection. The complaint figures were verified against Harold's complaint ledger, which he has maintained since November 1971 and which he keeps in a locked drawer behind the register. No one but Harold has read the ledger. Gary tried once. Harold said nothing. He did not need to.</em></p>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>129 N Randolph St · Macomb, Illinois 61455 · (309) 555-0174<br>
+    <a href="mailto:hello@plaidpantsemporium.com">hello@plaidpantsemporium.com</a></p>
+    <p style="margin-top:10px;font-size:.7rem;opacity:.35">© 1974 Plaid Pants Emporium. All rights reserved.</p>
+  </footer>
+</body>
+</html>
