@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harold's Letter to Customers, 1971 — Plaid Pants Emporium</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Limelight&family=Special+Elite&family=Oswald:wght@300;400;700&display=swap');
+    :root { --avocado:#6b7c2e; --harvest-gold:#d4a017; --burnt-orange:#cc5500; --chocolate:#3b1a08; --cream:#f5e6c8; --mustard:#e3b505; --olive:#808000; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { background-color:var(--chocolate); background-image: repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(212,160,23,.08) 20px,rgba(212,160,23,.08) 40px), repeating-linear-gradient(-45deg,transparent,transparent 20px,rgba(107,124,46,.08) 20px,rgba(107,124,46,.08) 40px); font-family:'Special Elite',serif; color:var(--cream); }
+    header { background:var(--burnt-orange); border-bottom:8px solid var(--harvest-gold); border-top:8px solid var(--harvest-gold); text-align:center; padding:24px 20px 18px; }
+    .logo { font-family:'Alfa Slab One',serif; font-size:clamp(2.2rem,7vw,5rem); color:var(--cream); text-shadow:4px 4px 0 var(--chocolate),7px 7px 0 rgba(0,0,0,.3); letter-spacing:2px; line-height:1.1; }
+    .logo span { color:var(--harvest-gold); }
+    .logo a { text-decoration:none; color:inherit; }
+    .tagline { font-family:'Limelight',cursive; font-size:clamp(.85rem,2.5vw,1.2rem); color:var(--mustard); margin-top:8px; letter-spacing:3px; text-transform:uppercase; }
+    nav { background:var(--avocado); padding:10px 0; text-align:center; border-bottom:4px solid var(--harvest-gold); }
+    nav a { color:var(--cream); text-decoration:none; margin:0 10px; font-family:'Oswald',sans-serif; font-weight:700; font-size:.82rem; letter-spacing:2px; text-transform:uppercase; transition:color .2s; }
+    nav a:hover { color:var(--mustard); }
+    .container { max-width:780px; margin:0 auto; padding:50px 20px 80px; }
+    .alert-banner { background:var(--mustard); color:var(--chocolate); padding:14px 20px; text-align:center; font-family:'Oswald',sans-serif; font-weight:700; font-size:.85rem; letter-spacing:1px; margin-bottom:32px; border:3px solid var(--chocolate); }
+    .alert-banner a { color:var(--chocolate); }
+    .letter-header { text-align:center; margin-bottom:40px; border:5px double var(--harvest-gold); padding:30px; }
+    .letter-title { font-family:'Limelight',cursive; font-size:clamp(1.2rem,3vw,1.8rem); color:var(--harvest-gold); letter-spacing:2px; margin-bottom:8px; }
+    .letter-subtitle { font-family:'Oswald',sans-serif; font-size:.85rem; letter-spacing:3px; text-transform:uppercase; color:var(--mustard); margin-bottom:6px; }
+    .letter-date { font-size:.85rem; color:rgba(245,230,200,.6); }
+    .divider { text-align:center; color:var(--burnt-orange); font-size:1.5rem; margin:30px 0; letter-spacing:6px; }
+    .letter-body { font-size:.95rem; line-height:1.9; }
+    .letter-body p { margin-bottom:18px; }
+    .letter-body h3 { font-family:'Limelight',cursive; font-size:1.1rem; color:var(--harvest-gold); margin:32px 0 14px; letter-spacing:1px; }
+    .pullquote { border-left:4px solid var(--burnt-orange); padding:14px 20px; margin:28px 0; font-style:italic; font-size:1.05rem; color:var(--mustard); background:rgba(245,230,200,.04); }
+    .bezos-callout { background:rgba(212,160,23,.08); border:2px solid var(--harvest-gold); padding:20px 24px; margin:28px 0; position:relative; }
+    .bezos-callout::before { content:'⚠ NOTABLE SIMILARITY'; font-family:'Oswald',sans-serif; font-size:.65rem; font-weight:700; letter-spacing:3px; color:var(--mustard); display:block; margin-bottom:10px; }
+    .bezos-callout-harold { font-size:.88rem; line-height:1.7; margin-bottom:12px; color:var(--cream); }
+    .bezos-callout-bezos { font-size:.82rem; line-height:1.7; color:rgba(245,230,200,.55); font-style:italic; border-top:1px solid rgba(212,160,23,.3); padding-top:10px; }
+    .bezos-callout-bezos::before { content:'Amazon shareholder letter, 1997: '; font-style:normal; color:var(--mustard); font-family:'Oswald',sans-serif; font-size:.7rem; letter-spacing:1px; text-transform:uppercase; }
+    .signature { margin-top:40px; font-style:italic; font-size:.95rem; }
+    .signature .sig-name { font-family:'Alfa Slab One',serif; font-size:1.4rem; color:var(--harvest-gold); display:block; margin:8px 0 4px; }
+    .signature .sig-title { font-family:'Oswald',sans-serif; font-size:.75rem; letter-spacing:2px; text-transform:uppercase; color:rgba(245,230,200,.6); }
+    .footnote { margin-top:40px; padding-top:20px; border-top:1px solid rgba(212,160,23,.3); font-size:.78rem; color:rgba(245,230,200,.45); line-height:1.7; }
+    .footnote .bombshell { color:var(--mustard); font-style:normal; font-family:'Oswald',sans-serif; font-size:.8rem; letter-spacing:1px; }
+    .nav-letters { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:32px; }
+    .nav-letters a { font-family:'Oswald',sans-serif; font-size:.75rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(245,230,200,.6); text-decoration:none; border:1px solid rgba(212,160,23,.3); padding:6px 14px; transition:all .2s; }
+    .nav-letters a:hover { color:var(--mustard); border-color:var(--mustard); }
+    .nav-letters a.current { color:var(--mustard); border-color:var(--harvest-gold); }
+    footer { background:var(--chocolate); border-top:8px solid var(--burnt-orange); text-align:center; padding:30px 20px; font-size:.8rem; color:rgba(245,230,200,.5); }
+    footer a { color:var(--burnt-orange); text-decoration:none; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><a href="index.html"><span>Plaid</span> Pants <span>Emporium</span></a></div>
+    <div class="tagline">America's Finest Trousers Since 1971</div>
+  </header>
+  <nav>
+    <a href="index.html">Men's</a>
+    <a href="index.html">Women's</a>
+    <a href="index.html">Leisure Wear</a>
+    <a href="index.html">Sale Room</a>
+    <a href="our-story.html">Our Story</a>
+    <a href="plaid-finder.html">Plaid Finder</a>
+    <a href="hall-of-fame.html">Hall of Fame</a>
+    <a href="complaint-box.html">Complaint Box</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+  <div class="container">
+
+    <div class="alert-banner">
+      ⚠ NOTE: This letter was written in December 1971. Jeff Bezos's first Amazon shareholder letter was published in April 1997. Harold has no comment. &nbsp;|&nbsp; <a href="annual-letter.html">← Back to Annual Letters</a>
+    </div>
+
+    <div class="nav-letters">
+      <a href="letter-1971.html" class="current">1971 ★</a>
+      <a href="letter-1972.html">1972</a>
+      <a href="letter-1973.html">1973</a>
+      <a href="annual-letter.html">1974</a>
+    </div>
+
+    <div class="letter-header">
+      <div class="letter-title">Harold's Annual Letter to Customers</div>
+      <div class="letter-subtitle">Plaid Pants Emporium · Macomb, Illinois</div>
+      <div class="letter-date">Year-End 1971 · First Year of Operation (Partial)</div>
+    </div>
+
+    <div class="letter-body">
+      <p>To our customers:</p>
+
+      <p>We opened on October 14th. It is now December. That is, by most reckonings, approximately eleven weeks. This letter covers those eleven weeks. I intend to write one of these every year. I intend to be honest in it. I am starting now.</p>
+
+      <h3>On What We Are Doing Here</h3>
+
+      <p>I want to be direct about what this store is and what it is not. It is not a store that is trying to be something to everyone. It is a store that sells plaid trousers — good ones, at a fair price, to customers who understand what they are buying. That is the whole business. I do not intend to complicate it.</p>
+
+      <div class="bezos-callout">
+        <div class="bezos-callout-harold">Harold, December 1971: "I do not manage this store to look impressive at the end of a quarter. I manage it to still be here in thirty years. These are different objectives and they occasionally require different decisions. When they conflict, I choose thirty years."</div>
+        <div class="bezos-callout-bezos">"We believe that a fundamental measure of our success will be the shareholder value we create over the long term... We will continue to make investment decisions in light of long-term market leadership considerations rather than short-term profitability considerations or short-term Wall Street reactions."</div>
+      </div>
+
+      <h3>On the Customer</h3>
+
+      <p>I have spent eleven weeks watching customers come through the door and I have learned one thing with certainty: the customer who feels understood will come back. The customer who feels sold to will not. These are not the same thing and the difference matters more than any other single factor in this business.</p>
+
+      <p>I am not interested in making a sale. I am interested in fitting a man correctly. A correctly fitted man tells other men. That is the only marketing I intend to do.</p>
+
+      <div class="bezos-callout">
+        <div class="bezos-callout-harold">Harold, December 1971: "I am not interested in what my competitors are selling. I am interested in what my customers need. These are different orientations and they produce different stores. Stores that watch their competitors eventually become their competitors. Stores that watch their customers become something else — something the customer comes back to."</div>
+        <div class="bezos-callout-bezos">"Obsess over customers... We will continue to focus relentlessly on our customers... Our goal is to move quickly to solidify and extend our current position while we begin to pursue the online commerce opportunities in other areas. We see substantial opportunity in the large markets we are targeting."</div>
+      </div>
+
+      <h3>On Standards</h3>
+
+      <p>I will say something about hiring, though at present the staff consists of myself and Dolores, which limits the application of what I am about to say. Nevertheless: I will not hire a man who will do the job adequately when I can wait for a man who will do it correctly. Adequacy compounds into mediocrity. Correctness compounds into something you can be proud of in thirty years.</p>
+
+      <p>I intend to be proud of this in thirty years.</p>
+
+      <div class="bezos-callout">
+        <div class="bezos-callout-harold">Harold, December 1971: "Every person we hire raises the standard for the next person we hire, or lowers it. There is no neutral hire. I intend to hire only people who raise it. This will sometimes mean waiting. I am willing to wait."</div>
+        <div class="bezos-callout-bezos">"Setting the bar high in our approach to hiring has been, and will continue to be, the single most important element of Amazon.com's success... During our hiring meetings, we ask people to consider three questions before making a decision: Will you admire this person? Will this person raise the average level of effectiveness of the group they're entering?"</div>
+      </div>
+
+      <h3>On Being Misunderstood</h3>
+
+      <p>Several people I respect have told me this is not a good time to open a store selling plaid trousers in Macomb, Illinois. The economy is uncertain. The fashion trends are moving in a direction they describe as "away from plaid." My brother-in-law said I was making a mistake. My brother-in-law has been wrong before. I am making a considered bet that the customer who wants a good plaid trouser is not going away, that there are more of them than the fashion press believes, and that if I serve them correctly they will reward that service with loyalty. I may be wrong. I do not believe I am wrong.</p>
+
+      <div class="bezos-callout">
+        <div class="bezos-callout-harold">Harold, December 1971: "I am comfortable being misunderstood for long periods of time. I am not comfortable with short-term thinking. These are related positions."</div>
+        <div class="bezos-callout-bezos">"We will make bold rather than timid investment decisions where we see a sufficient probability of gaining market leadership advantages... Some of these investments will pay off, others will not, and we will have learned another valuable lesson in either case."</div>
+      </div>
+
+      <h3>On the First Eleven Weeks</h3>
+
+      <p>We sold 214 pairs of trousers. We received four complaints. We acted on zero of them, though we listened to all four and found one of them instructive about our sizing labels, which we have corrected. We turned a modest profit in November and a slightly less modest one in December, which is seasonal. One customer drove from Peoria specifically because someone in Macomb told him about us. I consider this the most important thing that happened in our first eleven weeks.</p>
+
+      <p>We are starting something here. I believe in it. I intend to write to you every year and tell you honestly whether it is working.</p>
+
+      <p>It is working.</p>
+
+      <div class="divider">◆ ◆ ◆</div>
+
+      <div class="signature">
+        With appreciation for your trust in a store that is eleven weeks old,
+        <span class="sig-name">Harold Buczkowski</span>
+        <span class="sig-title">Founder &amp; President · Plaid Pants Emporium · Est. October 14, 1971</span>
+      </div>
+
+      <div class="footnote">
+        <p><em>This letter was written in longhand by Harold Buczkowski in December 1971 and distributed to 47 customers. It was typed by Dolores. Dolores made one correction. Harold did not notice.</em></p>
+        <p style="margin-top:12px;"><span class="bombshell">A NOTE ON PROVENANCE:</span> <em>This letter was written in December 1971. Jeff Bezos's first letter to Amazon shareholders was published in April 1997, twenty-six years later. The similarities between Harold's stated operating philosophy — long-term orientation, customer obsession over competitor obsession, hiring standards, comfort with being misunderstood — and the philosophy articulated in that letter have been noted by several regular customers. Harold was made aware of this in 1997. Harold read the Amazon letter. Harold set it down. Harold said, "Hm." Harold has said nothing further on the subject. We consider this the appropriate response.</em></p>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>129 N Randolph St · Macomb, Illinois 61455 · (309) 555-0174<br>
+    <a href="mailto:hello@plaidpantsemporium.com">hello@plaidpantsemporium.com</a></p>
+    <p style="margin-top:10px;font-size:.7rem;opacity:.35">© 1974 Plaid Pants Emporium. All rights reserved. Harold's letters are his own. All of them. Written first. By Harold.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harold's Letter to Customers, 1972 — Plaid Pants Emporium</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Limelight&family=Special+Elite&family=Oswald:wght@300;400;700&display=swap');
+    :root { --avocado:#6b7c2e; --harvest-gold:#d4a017; --burnt-orange:#cc5500; --chocolate:#3b1a08; --cream:#f5e6c8; --mustard:#e3b505; --olive:#808000; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { background-color:var(--chocolate); background-image: repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(212,160,23,.08) 20px,rgba(212,160,23,.08) 40px), repeating-linear-gradient(-45deg,transparent,transparent 20px,rgba(107,124,46,.08) 20px,rgba(107,124,46,.08) 40px); font-family:'Special Elite',serif; color:var(--cream); }
+    header { background:var(--burnt-orange); border-bottom:8px solid var(--harvest-gold); border-top:8px solid var(--harvest-gold); text-align:center; padding:24px 20px 18px; }
+    .logo { font-family:'Alfa Slab One',serif; font-size:clamp(2.2rem,7vw,5rem); color:var(--cream); text-shadow:4px 4px 0 var(--chocolate),7px 7px 0 rgba(0,0,0,.3); letter-spacing:2px; line-height:1.1; }
+    .logo span { color:var(--harvest-gold); }
+    .logo a { text-decoration:none; color:inherit; }
+    .tagline { font-family:'Limelight',cursive; font-size:clamp(.85rem,2.5vw,1.2rem); color:var(--mustard); margin-top:8px; letter-spacing:3px; text-transform:uppercase; }
+    nav { background:var(--avocado); padding:10px 0; text-align:center; border-bottom:4px solid var(--harvest-gold); }
+    nav a { color:var(--cream); text-decoration:none; margin:0 10px; font-family:'Oswald',sans-serif; font-weight:700; font-size:.82rem; letter-spacing:2px; text-transform:uppercase; transition:color .2s; }
+    nav a:hover { color:var(--mustard); }
+    .container { max-width:780px; margin:0 auto; padding:50px 20px 80px; }
+    .nav-letters { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:32px; }
+    .nav-letters a { font-family:'Oswald',sans-serif; font-size:.75rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(245,230,200,.6); text-decoration:none; border:1px solid rgba(212,160,23,.3); padding:6px 14px; transition:all .2s; }
+    .nav-letters a:hover { color:var(--mustard); border-color:var(--mustard); }
+    .nav-letters a.current { color:var(--mustard); border-color:var(--harvest-gold); }
+    .letter-header { text-align:center; margin-bottom:40px; border:5px double var(--harvest-gold); padding:30px; }
+    .letter-title { font-family:'Limelight',cursive; font-size:clamp(1.2rem,3vw,1.8rem); color:var(--harvest-gold); letter-spacing:2px; margin-bottom:8px; }
+    .letter-subtitle { font-family:'Oswald',sans-serif; font-size:.85rem; letter-spacing:3px; text-transform:uppercase; color:var(--mustard); margin-bottom:6px; }
+    .letter-date { font-size:.85rem; color:rgba(245,230,200,.6); }
+    .divider { text-align:center; color:var(--burnt-orange); font-size:1.5rem; margin:30px 0; letter-spacing:6px; }
+    .letter-body { font-size:.95rem; line-height:1.9; }
+    .letter-body p { margin-bottom:18px; }
+    .letter-body h3 { font-family:'Limelight',cursive; font-size:1.1rem; color:var(--harvest-gold); margin:32px 0 14px; letter-spacing:1px; }
+    .pullquote { border-left:4px solid var(--burnt-orange); padding:14px 20px; margin:28px 0; font-style:italic; font-size:1.05rem; color:var(--mustard); background:rgba(245,230,200,.04); }
+    .stat-box { background:rgba(245,230,200,.05); border:2px solid var(--harvest-gold); padding:20px 24px; margin:28px 0; }
+    .stat-box table { width:100%; border-collapse:collapse; font-size:.9rem; }
+    .stat-box th { font-family:'Oswald',sans-serif; font-size:.75rem; letter-spacing:2px; text-transform:uppercase; color:var(--mustard); text-align:left; padding:6px 0; border-bottom:1px solid rgba(212,160,23,.3); }
+    .stat-box td { padding:8px 0; border-bottom:1px solid rgba(245,230,200,.08); color:var(--cream); }
+    .stat-box td:last-child { text-align:right; color:var(--harvest-gold); font-family:'Oswald',sans-serif; font-weight:700; }
+    .signature { margin-top:40px; font-style:italic; font-size:.95rem; }
+    .signature .sig-name { font-family:'Alfa Slab One',serif; font-size:1.4rem; color:var(--harvest-gold); display:block; margin:8px 0 4px; }
+    .signature .sig-title { font-family:'Oswald',sans-serif; font-size:.75rem; letter-spacing:2px; text-transform:uppercase; color:rgba(245,230,200,.6); }
+    .footnote { margin-top:40px; padding-top:20px; border-top:1px solid rgba(212,160,23,.3); font-size:.78rem; color:rgba(245,230,200,.45); line-height:1.7; }
+    footer { background:var(--chocolate); border-top:8px solid var(--burnt-orange); text-align:center; padding:30px 20px; font-size:.8rem; color:rgba(245,230,200,.5); }
+    footer a { color:var(--burnt-orange); text-decoration:none; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><a href="index.html"><span>Plaid</span> Pants <span>Emporium</span></a></div>
+    <div class="tagline">America's Finest Trousers Since 1971</div>
+  </header>
+  <nav>
+    <a href="index.html">Men's</a>
+    <a href="index.html">Women's</a>
+    <a href="index.html">Leisure Wear</a>
+    <a href="index.html">Sale Room</a>
+    <a href="our-story.html">Our Story</a>
+    <a href="plaid-finder.html">Plaid Finder</a>
+    <a href="hall-of-fame.html">Hall of Fame</a>
+    <a href="complaint-box.html">Complaint Box</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+  <div class="container">
+    <div class="nav-letters">
+      <a href="letter-1971.html">1971 ★</a>
+      <a href="letter-1972.html" class="current">1972</a>
+      <a href="letter-1973.html">1973</a>
+      <a href="annual-letter.html">1974</a>
+    </div>
+
+    <div class="letter-header">
+      <div class="letter-title">Harold's Annual Letter to Customers</div>
+      <div class="letter-subtitle">Plaid Pants Emporium · Macomb, Illinois</div>
+      <div class="letter-date">Year-End 1972 · Second Year of Operation</div>
+    </div>
+
+    <div class="letter-body">
+      <p>To our customers:</p>
+      <p>This is the second letter. Last year I said I intended to write one of these every year and be honest in it. I am doing that now.</p>
+
+      <h3>On the Year</h3>
+      <p>1972 was our first full calendar year. We were open for all twelve months. This sounds like a low bar and it is, but I have watched other stores in Macomb not clear it, so I am noting it.</p>
+      <p>Sales increased by 31% over our partial first year, adjusted for the fact that 1971 was only eleven weeks. On a comparable basis — projecting 1971 to a full year — growth was approximately 19%. I prefer to report the comparable figure. It is more honest. Anyone can show growth when the prior period was eleven weeks.</p>
+
+      <div class="stat-box">
+        <table>
+          <thead><tr><th>Metric</th><th>1972</th></tr></thead>
+          <tbody>
+            <tr><td>Pairs sold</td><td>891</td></tr>
+            <tr><td>Customers who drove more than 50 miles</td><td>14</td></tr>
+            <tr><td>Complaints received</td><td>11</td></tr>
+            <tr><td>Complaints resulting in a change of any kind</td><td>1</td></tr>
+            <tr><td>What changed</td><td>The sizing label on the Powerbroker</td></tr>
+            <tr><td>Times Gary suggested a promotion</td><td>Gary does not work here yet</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>On Mistakes</h3>
+      <p>I made two mistakes this year that I want to account for. First, I ordered too many of the Burnt Ember colorway in October based on a prediction I made in July that turned out to be wrong. The Burnt Ember is a fine trouser. I was wrong about the volume. I have 34 pairs of it in the back room. I am not discounting them. I will wait.</p>
+      <p>Second, I hired a part-time stock person in March who left in May. I will not say more about this because the man has a family and I bear him no ill will. I will say that I moved too quickly and did not ask the right questions. I will not make that mistake again.</p>
+
+      <div class="pullquote">"A mistake you account for honestly is an asset. A mistake you hide is a liability that accrues interest."</div>
+
+      <h3>On What Scales</h3>
+      <p>Several customers have asked whether I intend to open a second location. The answer is no, for now. I want to understand this location fully before I reproduce it. A man who opens a second store before he understands his first store doubles his confusion, not his success. I have seen this happen. I am not interested in it.</p>
+      <p>What does scale, I believe, is reputation. A customer who is fitted correctly tells someone. That someone tells someone. I have now traced fourteen customers back to a single conversation at a church function in Galesburg in April. I did not advertise in Galesburg. I have never been to Galesburg. Reputation travels further than advertising and costs less. I intend to invest in reputation.</p>
+
+      <h3>On the Long View</h3>
+      <p>I want to say something that may sound strange in a letter about an eleven-month-old store: I am not managing this store to look impressive at the end of a quarter. I am managing it to still be here in thirty years. These are different objectives and they occasionally require different decisions — the 34 pairs of Burnt Ember in the back room being a current example. When the two objectives conflict, I choose thirty years. I have chosen thirty years each time so far. I intend to keep choosing it.</p>
+
+      <div class="signature">
+        With continued appreciation,
+        <span class="sig-name">Harold Buczkowski</span>
+        <span class="sig-title">Founder &amp; President · Plaid Pants Emporium · Est. 1971</span>
+      </div>
+
+      <div class="footnote">
+        <em>The 34 pairs of Burnt Ember were sold by March of 1973 at full price. Harold has not commented on this outcome. Gary, who joined in 1974, was told about the Burnt Ember situation during his first week. Harold told him: "The pants were right. The timing was wrong. Wait." Gary wrote this down. It is the only piece of business advice Harold has given Gary directly. Gary considers it the most useful thing he knows.</em>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>129 N Randolph St · Macomb, Illinois 61455 · (309) 555-0174<br>
+    <a href="mailto:hello@plaidpantsemporium.com">hello@plaidpantsemporium.com</a></p>
+    <p style="margin-top:10px;font-size:.7rem;opacity:.35">© 1974 Plaid Pants Emporium. All rights reserved.</p>
+  </footer>
+</body>
+</html>
